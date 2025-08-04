@@ -182,7 +182,7 @@
           </li>
 
           <li class="navbar-item">
-            <button  id="cases" class="navbar-link" data-nav-link>Case</button>
+            <button id="cases" class="navbar-link" data-nav-link>Case</button>
           </li>
 
           <li class="navbar-item">
@@ -475,9 +475,15 @@
 
           <ul class="clients-list has-scrollbar">
 
-            <li class="clients-item" style="margin-right: 100px;">
+            <li class="clients-item">
+              <a href="#">
+                <img src="./assets/images/servicenow.png" style=" height: 130px;" alt="client logo">
+              </a>
+            </li>
+
+            <li class="clients-item">
               <a href="https://www.natwest.com/">
-                <img src="./assets/images/natwest.png" style="width: 300px" alt="client logo">
+                <img src="./assets/images/natwest.png" style=" height: 130px;" alt="client logo">
               </a>
             </li>
 
@@ -489,7 +495,7 @@
 
             <li class="clients-item">
               <a href="https://www.linkedin.com/company/vidrona-ltd/?originalSubdomain=uk">
-                <img src="./assets/images/vidrona.png" style="width: 100px;margin-top: 10px;" alt="client logo">
+                <img src="./assets/images/vidrona.png" style=" height: 130px;" alt="client logo">
               </a>
             </li>
 
@@ -597,17 +603,37 @@
 
             <li class="timeline-item">
 
-              <h4 class="h4 timeline-item-title">Software Development Engineer</h4>
+              <h4 class="h4 timeline-item-title">Software Engineer Intern <p style="color: #056C3E; padding-top: 5px;">ServiceNow</p></h4>
+
+              <span>May, 2025 — Current</span>
+
+              <p class="timeline-text">
+                Reduced repeating “how-to” tickets by building RAG Orchestration Agent, using KB retrieval and now APIs,
+auto handled reducing 4.6k tickets, deflection hit 31%, at an estimate of cutting 400 hrs / quarter..
+              </p>
+              <p class="timeline-text">
+                Added validation on every answer (structure + facts) and routed low-risk asks to faster models. Hallucination rate
+down by 37%, token spend down 22%, median latency 9.3s to 5.7s..
+              </p>
+              <p class="timeline-text">
+                Added a context memory layer to retain ticket history and layered in response guards (schema/fact checks) with
+dynamic model routing. This drove one-touch resolutions up 54% to 82%, cut handle time by 18%.
+              </p>
+            </li>
+
+            <li class="timeline-item">
+
+              <h4 class="h4 timeline-item-title">Software Development Engineer <p style="color: #b16fda; padding-top: 5px;">NatWest</p></h4>
 
               <span>July, 2022 — August, 2024</span>
 
               <p class="timeline-text">
-                 Engineered and optimized the in-house chatbot’s client codebase in React, incorporating 5+ features,
+                Engineered and optimized the in-house chatbot’s client codebase in React, incorporating 5+ features,
                 including
                 enhanced accessibility, significantly improving UI/UX and boosting user engagement.
               </p>
               <p class="timeline-text">
-                 Utilized Redis for caching SQL query results, and implemented RabbitMQ for message queuing. This
+                Utilized Redis for caching SQL query results, and implemented RabbitMQ for message queuing. This
                 efficient
                 distribution of data processing led to a 40% reduction in response times under high loads.
               </p>
@@ -617,27 +643,28 @@
                 satisfaction by 40% and reducing manual chat closures by 25% through automated processes.
               </p>
               <p class="timeline-text">
-                 Swiftly resolved Redis standby mode during high traffic by implementing rate limiting for API calls
+                Swiftly resolved Redis standby mode during high traffic by implementing rate limiting for API calls
                 using the
                 leaky bucket algorithm, ensuring CPU consumption remained below 70% and enhancing system stability.
               </p>
               <p class="timeline-text">
-                 Developed a React component toolkit with over 30 customizable options, facilitating the product owners and developers to autonomously create diverse projects, reducing developer involvement and time by 90%.
+                Developed a React component toolkit with over 30 customizable options, facilitating the product owners
+                and developers to autonomously create diverse projects, reducing developer involvement and time by 90%.
               </p>
-              
+
 
               <p class="timeline-text">
-                 Built a scaffolding CLI that automates the generation of 200+ daily test packs summary for the web
+                Built a scaffolding CLI that automates the generation of 200+ daily test packs summary for the web
                 services
                 into a daily test results dashboard, saving over 4 hours per day for testing team.
               </p>
               <p class="timeline-text">
-                 Streamlined deployment by automating with Terraform, GitLab, leveraging Docker for containerization,
+                Streamlined deployment by automating with Terraform, GitLab, leveraging Docker for containerization,
                 stream-
                 lining deployment time by 50%, and ensuring consistent environment setup across all CI/CD stages
               </p>
               <p class="timeline-text">
-                 Mentored 3 Software interns on React and documented best practices within the organization.
+                Mentored 3 Software interns on React and documented best practices within the organization.
               </p>
 
 
@@ -645,20 +672,20 @@
 
             <li class="timeline-item">
 
-              <h4 class="h4 timeline-item-title">Software Engineer Intern</h4>
+              <h4 class="h4 timeline-item-title">Software Engineer Intern <p style="color: #dfcb33; padding-top: 5px;">Vidrona</p></h4>
 
               <span>September 2021 - March 2022</span>
 
               <p class="timeline-text">
-                 Developed an intuitive dashboard using ReactJS to provide insights for assets system condition and
+                Developed an intuitive dashboard using ReactJS to provide insights for assets system condition and
                 improved state management efficiency of 30% by integrating Redux and the react-query caching.
               </p>
               <p class="timeline-text">
-                 Implemented a real-time alert system using Firebase Cloud Messaging to notify operators of
+                Implemented a real-time alert system using Firebase Cloud Messaging to notify operators of
                 abnormalities, enhancing response time and operational efficiency by 40%.
               </p>
               <p class="timeline-text">
-                 Engineered a secure messaging widget using Socket.io, Node.js, and JWT authentication, facilitating
+                Engineered a secure messaging widget using Socket.io, Node.js, and JWT authentication, facilitating
                 seamless interaction between field operatives and executives, enhancing communication efficiency by 50%.
               </p>
 
@@ -1031,7 +1058,8 @@
       <article class="blog" data-page="case">
 
         <header>
-          <h2 class="h2">Case Study </h2> <h2 class="h2 article-title">& Design Ideas</h2>
+          <h2 class="h2">Case Study </h2>
+          <h2 class="h2 article-title">& Design Ideas</h2>
         </header>
 
         <section class="blog-posts">
@@ -1067,7 +1095,8 @@
             </li> -->
 
             <li class="blog-post-item">
-              <a href="https://www.figma.com/design/gOHXAOMuEJf5gr1ylfDYzX/UI-Screens" target="_blank" rel="noopener noreferrer">
+              <a href="https://www.figma.com/design/gOHXAOMuEJf5gr1ylfDYzX/UI-Screens" target="_blank"
+                rel="noopener noreferrer">
 
                 <figure class="blog-banner-box">
                   <img src="./assets/images/blog-2.jpg" alt="Design Ideas" loading="lazy">
@@ -1095,7 +1124,8 @@
             </li>
 
             <li class="blog-post-item">
-              <a href="https://www.figma.com/design/YYYy4e83nstiGOzktwGuR2/My-Designs?node-id=0-1&node-type=canvas&t=67uwKagcswKm7Qen-0"target="_blank" rel="noopener noreferrer">
+              <a href="https://www.figma.com/design/YYYy4e83nstiGOzktwGuR2/My-Designs?node-id=0-1&node-type=canvas&t=67uwKagcswKm7Qen-0"
+                target="_blank" rel="noopener noreferrer">
 
                 <figure class="blog-banner-box">
                   <img src="./assets/images/Intelli Analytics - Line - Tower.png" alt="Vns" loading="lazy">
@@ -1114,13 +1144,14 @@
                   <h3 class="h3 blog-item-title">Design VNS</h3>
 
                   <p class="blog-text">
-                    To design an energy asset management application that monitors and maintains powerlines and transmission energy.
+                    To design an energy asset management application that monitors and maintains powerlines and
+                    transmission energy.
                   </p>
 
                 </div>
 
               </a>
-            </li> 
+            </li>
 
             <li class="blog-post-item">
               <a href="./casestudy1.html" target="_blank" rel="noopener noreferrer">
@@ -1151,7 +1182,8 @@
             </li>
 
             <li class="blog-post-item">
-              <a href="https://www.figma.com/design/YYYy4e83nstiGOzktwGuR2/My-Designs?node-id=18-6121&node-type=canvas&t=67uwKagcswKm7Qen-0" target="_blank" rel="noopener noreferrer">
+              <a href="https://www.figma.com/design/YYYy4e83nstiGOzktwGuR2/My-Designs?node-id=18-6121&node-type=canvas&t=67uwKagcswKm7Qen-0"
+                target="_blank" rel="noopener noreferrer">
 
                 <figure class="blog-banner-box">
                   <img src="./assets/images/blog-5.jpg" alt="The forgotten art of spacing" loading="lazy">
@@ -1179,7 +1211,8 @@
             </li>
 
             <li class="blog-post-item">
-              <a href="https://www.figma.com/design/YYYy4e83nstiGOzktwGuR2/My-Designs?node-id=1-13732&node-type=canvas&t=67uwKagcswKm7Qen-0" target="_blank" rel="noopener noreferrer">
+              <a href="https://www.figma.com/design/YYYy4e83nstiGOzktwGuR2/My-Designs?node-id=1-13732&node-type=canvas&t=67uwKagcswKm7Qen-0"
+                target="_blank" rel="noopener noreferrer">
 
                 <figure class="blog-banner-box">
                   <img src="./assets/images/Contact Info.png" alt="Design digest #79" loading="lazy">

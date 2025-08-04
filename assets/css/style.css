@@ -751,8 +751,9 @@ main {
 
 .clients-item img {
   width: 100%;
-  filter: grayscale(1);
+  /* filter: grayscale(1); */
   transition: var(--transition-1);
+  background-color: white;
 }
 
 .clients-item img:hover { filter: grayscale(0); }
