@@ -1,0 +1,28 @@
+<svg width="180" height="180" viewBox="0 0 180 180" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="gradP2P" x1="0" y1="0" x2="180" y2="180" gradientUnits="userSpaceOnUse">
+      <stop offset="0.2" stop-color="#FFDB6E"/>
+      <stop offset="1" stop-color="#FFBC5E"/>
+    </linearGradient>
+  </defs>
+
+  <!-- Central CAS block (hexagon) -->
+  <polygon points="90,65 115,80 115,105 90,120 65,105 65,80"
+           stroke="url(#gradP2P)" stroke-width="3" fill="none"/>
+
+  <!-- Outer ring of 6 nodes -->
+  <circle cx="90" cy="30" r="6" fill="url(#gradP2P)"/>
+  <circle cx="140" cy="60" r="6" fill="url(#gradP2P)"/>
+  <circle cx="140" cy="120" r="6" fill="url(#gradP2P)"/>
+  <circle cx="90" cy="150" r="6" fill="url(#gradP2P)"/>
+  <circle cx="40" cy="120" r="6" fill="url(#gradP2P)"/>
+  <circle cx="40" cy="60" r="6" fill="url(#gradP2P)"/>
+
+  <!-- Connectors -->
+  <line x1="90" y1="90" x2="90" y2="30" stroke="url(#gradP2P)" stroke-width="1.5"/>
+  <line x1="90" y1="90" x2="140" y2="60" stroke="url(#gradP2P)" stroke-width="1.5"/>
+  <line x1="90" y1="90" x2="140" y2="120" stroke="url(#gradP2P)" stroke-width="1.5"/>
+  <line x1="90" y1="90" x2="90" y2="150" stroke="url(#gradP2P)" stroke-width="1.5"/>
+  <line x1="90" y1="90" x2="40" y2="120" stroke="url(#gradP2P)" stroke-width="1.5"/>
+  <line x1="90" y1="90" x2="40" y2="60" stroke="url(#gradP2P)" stroke-width="1.5"/>
+</svg>

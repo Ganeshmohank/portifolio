@@ -1,0 +1,29 @@
+<svg width="180" height="100" viewBox="0 0 440 300" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="gradPKC" x1="0" y1="0" x2="340" y2="300" gradientUnits="userSpaceOnUse">
+      <stop offset="0.2" stop-color="#FFDB6E"/>
+      <stop offset="1" stop-color="#FFBC5E"/>
+    </linearGradient>
+  </defs>
+
+  <!-- Kafka hub (central node) -->
+  <circle cx="120" cy="150" r="24" stroke="url(#gradPKC)" stroke-width="6" fill="none"/>
+  <!-- Kafka outer nodes -->
+  <circle cx="120" cy="70" r="12" fill="url(#gradPKC)"/>
+  <circle cx="120" cy="230" r="12" fill="url(#gradPKC)"/>
+  <circle cx="45" cy="150" r="12" fill="url(#gradPKC)"/>
+  <!-- Kafka links -->
+  <line x1="120" y1="70" x2="120" y2="126" stroke="url(#gradPKC)" stroke-width="4"/>
+  <line x1="120" y1="174" x2="120" y2="230" stroke="url(#gradPKC)" stroke-width="4"/>
+  <line x1="57" y1="150" x2="92" y2="150" stroke="url(#gradPKC)" stroke-width="4"/>
+
+  <!-- Two parallel connector lines -->
+  <line x1="165" y1="130" x2="300" y2="130" stroke="url(#gradPKC)" stroke-width="6"/>
+  <line x1="165" y1="170" x2="300" y2="170" stroke="url(#gradPKC)" stroke-width="6"/>
+
+  <!-- Consumer container -->
+  <rect x="325" y="100" width="60" height="100" rx="16" stroke="url(#gradPKC)" stroke-width="6" fill="none"/>
+  <!-- Fixed internal lines (now stay within box width) -->
+  <line x1="340" y1="140" x2="370" y2="140" stroke="url(#gradPKC)" stroke-width="4"/>
+  <line x1="340" y1="160" x2="370" y2="160" stroke="url(#gradPKC)" stroke-width="4"/>
+</svg>

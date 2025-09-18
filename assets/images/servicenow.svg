@@ -1,0 +1,22 @@
+<svg width="270" height="60" viewBox="0 0 270 60" fill="none" xmlns="http://www.w3.org/2000/svg">
+
+  <!-- Transparent background -->
+  <rect width="270" height="60" fill="transparent"/>
+
+  <!-- Left part: "servicen" -->
+  <text x="0" y="40" font-family="Helvetica Neue, Helvetica, Arial, sans-serif" font-size="36" font-weight="bold" fill="#FFFFFF" letter-spacing="1">
+    servicen
+  </text>
+
+  <!-- Profile "o" -->
+  <circle cx="168" cy="28" r="12" stroke="#13A564" stroke-width="3" fill="none"/>
+  <circle cx="168" cy="23" r="4" fill="#13A564"/>
+  <path d="M160 34c2-5 14-5 16 0" stroke="#13A564" stroke-width="2" fill="none" stroke-linecap="round"/>
+
+  <!-- Right part: "w" -->
+  <text x="185" y="40" font-family="Helvetica Neue, Helvetica, Arial, sans-serif" font-size="36" font-weight="bold" fill="#FFFFFF" letter-spacing="1">
+    w
+  </text>
+</svg>
+
+

@@ -1,0 +1,37 @@
+<svg width="160" height="160" viewBox="0 0 160 160" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="gradAWS" x1="0" y1="0" x2="160" y2="160" gradientUnits="userSpaceOnUse">
+      <stop offset="0.2" stop-color="#FFDB6E"/>
+      <stop offset="1" stop-color="#FFBC5E"/>
+    </linearGradient>
+  </defs>
+
+  <!-- Storage block -->
+  <rect x="40" y="40" width="80" height="80" rx="10"
+        stroke="url(#gradAWS)" stroke-width="3" fill="none"/>
+
+  <!-- AWS text -->
+  <text x="80" y="95" font-family="Helvetica, Arial, sans-serif" font-size="24" font-weight="bold"
+        text-anchor="middle" fill="url(#gradAWS)">S3</text>
+
+  <!-- Grouped gears (moved slightly inward, closer together) -->
+  <g transform="translate(100,55)">
+    <!-- Big gear -->
+    <g transform="scale(0.55)">
+      <circle cx="0" cy="0" r="6" stroke="url(#gradAWS)" stroke-width="2" fill="none"/>
+      <path d="M6 0 L9 0 M-6 0 L-9 0 M0 6 L0 9 M0 -6 L0 -9 
+               M4.2 4.2 L6 6 M-4.2 -4.2 L-6 -6 M-4.2 4.2 L-6 6 M4.2 -4.2 L6 -6"
+            stroke="url(#gradAWS)" stroke-width="2"/>
+      <circle cx="0" cy="0" r="2.5" fill="url(#gradAWS)"/>
+    </g>
+
+    <!-- Small gear (tucked closer, no collision with box) -->
+    <g transform="translate(8,-6) scale(0.35)">
+      <circle cx="0" cy="0" r="6" stroke="url(#gradAWS)" stroke-width="2" fill="none"/>
+      <path d="M6 0 L9 0 M-6 0 L-9 0 M0 6 L0 9 M0 -6 L0 -9 
+               M4.2 4.2 L6 6 M-4.2 -4.2 L-6 -6 M-4.2 4.2 L-6 6 M4.2 -4.2 L6 -6"
+            stroke="url(#gradAWS)" stroke-width="2"/>
+      <circle cx="0" cy="0" r="2.5" fill="url(#gradAWS)"/>
+    </g>
+  </g>
+</svg>
