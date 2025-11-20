@@ -1,6 +1,60 @@
 'use strict';
 
+// Carousel functionality for achievements
+function changeSlide(button, direction) {
+  const carousel = button.closest('.achievement-carousel');
+  const slides = carousel.querySelectorAll('.carousel-slide');
+  const dots = carousel.querySelectorAll('.carousel-dot');
+  let currentIndex = Array.from(slides).findIndex(slide => slide.classList.contains('active'));
+  
+  currentIndex = (currentIndex + direction + slides.length) % slides.length;
+  
+  slides.forEach(slide => slide.classList.remove('active'));
+  dots.forEach(dot => dot.classList.remove('active'));
+  
+  slides[currentIndex].classList.add('active');
+  dots[currentIndex].classList.add('active');
+}
 
+function goToSlide(dot, index) {
+  const carousel = dot.closest('.achievement-carousel');
+  const slides = carousel.querySelectorAll('.carousel-slide');
+  const dots = carousel.querySelectorAll('.carousel-dot');
+  
+  slides.forEach(slide => slide.classList.remove('active'));
+  dots.forEach(d => d.classList.remove('active'));
+  
+  slides[index].classList.add('active');
+  dots[index].classList.add('active');
+}
+
+// Simple loading sequence: 2s loading -> video -> disappear when done
+window.addEventListener('load', function() {
+  const loadingOverlay = document.getElementById('loadingOverlay');
+  const introVideo = document.getElementById('introVideo');
+  const mainContent = document.querySelector('main');
+  
+  if (introVideo) {
+    // Start video after 2 seconds
+    setTimeout(function() {
+      introVideo.play();
+    }, 2000);
+    
+    // Stop video 0.5 seconds before it ends
+    introVideo.addEventListener('timeupdate', function() {
+      if (introVideo.duration && introVideo.currentTime >= introVideo.duration - 0.5) {
+        introVideo.pause();
+        loadingOverlay.classList.add('hidden');
+        introVideo.remove();
+        
+        // Trigger fade-in animation for website
+        if (mainContent) {
+          mainContent.classList.add('fade-in');
+        }
+      }
+    });
+  }
+});
 
 // element toggle function
 const elementToggleFunc = function (elem) { elem.classList.toggle("active"); }
@@ -148,15 +202,25 @@ const pages = document.querySelectorAll("[data-page]");
 // add event to all nav link
 for (let i = 0; i < navigationLinks.length; i++) {
   navigationLinks[i].addEventListener("click", function () {
+    const buttonText = this.innerHTML.toLowerCase().trim();
 
-    for (let i = 0; i < pages.length; i++) {
-      if (this.innerHTML.toLowerCase() === pages[i].dataset.page) {
-        pages[i].classList.add("active");
-        navigationLinks[i].classList.add("active");
+    // Remove active from all pages and nav links first
+    for (let j = 0; j < pages.length; j++) {
+      pages[j].classList.remove("active");
+    }
+    for (let j = 0; j < navigationLinks.length; j++) {
+      navigationLinks[j].classList.remove("active");
+    }
+
+    // Add active to matching page and current nav link
+    for (let j = 0; j < pages.length; j++) {
+      const pageData = pages[j].dataset.page.toLowerCase().trim();
+      
+      if (buttonText === pageData) {
+        pages[j].classList.add("active");
+        this.classList.add("active");
         window.scrollTo(0, 0);
-      } else {
-        pages[i].classList.remove("active");
-        navigationLinks[i].classList.remove("active");
+        break;
       }
     }
 

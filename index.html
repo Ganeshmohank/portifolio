@@ -28,6 +28,28 @@
 <body>
 
   <!--
+    - #LOADING PAGE
+  -->
+  <div class="loading-overlay" id="loadingOverlay">
+    <div class="loading-container">
+      <!-- Loading Screen (First 2 seconds) -->
+      <div class="loading-screen" id="loadingScreen">
+        <div class="loading-content">
+          <p class="loading-label">Loading</p>
+          <div class="loading-bar-container">
+            <div class="loading-bar"></div>
+          </div>
+        </div>
+      </div>
+      
+      <!-- Video Background -->
+      <video class="intro-video" id="introVideo" muted playsinline>
+        <source src="./assets/intro-video.mp4" type="video/mp4">
+      </video>
+    </div>
+  </div>
+
+  <!--
     - #MAIN
   -->
 
@@ -180,6 +202,10 @@
           </li>
 
           <li class="navbar-item">
+            <button class="navbar-link" data-nav-link>Achievements</button>
+          </li>
+
+          <li class="navbar-item">
             <button class="navbar-link" data-nav-link>Resume</button>
           </li>
 
@@ -191,9 +217,9 @@
             <button id="cases" class="navbar-link" data-nav-link>Case</button>
           </li>
 
-          <li class="navbar-item">
+          <!-- <li class="navbar-item">
             <button class="navbar-link" data-nav-link>Contact</button>
-          </li>
+          </li> -->
 
         </ul>
 
@@ -1114,8 +1140,7 @@
       <article class="blog" data-page="case">
 
         <header>
-          <h2 class="h2">Case Study </h2>
-          <h2 class="h2 article-title">& Design Ideas</h2>
+          <h2 class="h2 article-title">Case Study & Design Ideas</h2>
         </header>
 
         <section class="blog-posts">
@@ -1298,17 +1323,142 @@
           </ul>
 
         </section>
-
       </article>
 
 
+
+      <!--
+        - #ACHIEVEMENTS
+      -->
+
+      <article class="achievements" data-page="achievements">
+      
+
+        <header>
+          <h2 class="h2 article-title">Achievements</h2>
+        </header>
+
+        <section class="achievements-list">
+
+          <!-- Achievement 1: EduCo -->
+          <div class="achievement-item">
+            <div class="achievement-header">
+              <h3 class="h3 achievement-title">EduCo - Winner at Self-Evolving Agents Hackathon</h3>
+              <p class="achievement-award">Best Use of Airia - Enterprise AI Simplified & Best Use of Fastino - Fastino Labs</p>
+            </div>
+
+            <div class="achievement-carousel">
+              <div class="carousel-container">
+                <div class="carousel-slide active">
+                  <img src="./assets/images/selfevolving1.jpeg" alt="EduCo Project 1" loading="lazy">
+                </div>
+                <div class="carousel-slide">
+                  <img src="./assets/images/selfevolving2.jpeg" alt="EduCo Project 2" loading="lazy">
+                </div>
+                <div class="carousel-slide">
+                  <img src="./assets/images/selfevolving3.jpeg" alt="EduCo Project 3" loading="lazy">
+                </div>
+                <div class="carousel-slide">
+                  <img src="./assets/images/selfevolving4.jpeg" alt="EduCo Project 4" loading="lazy">
+                </div>
+              </div>
+              <div class="carousel-arrow prev" onclick="changeSlide(this, -1)">❮</div>
+              <div class="carousel-arrow next" onclick="changeSlide(this, 1)">❯</div>
+              <div class="carousel-nav">
+                <div class="carousel-dot active" onclick="goToSlide(this, 0)"></div>
+                <div class="carousel-dot" onclick="goToSlide(this, 1)"></div>
+                <div class="carousel-dot" onclick="goToSlide(this, 2)"></div>
+                <div class="carousel-dot" onclick="goToSlide(this, 3)"></div>
+              </div>
+            </div>
+
+            <div class="achievement-content">
+
+              <p>
+                <strong>AI shouldn't just teach you - it should learn you.</strong>
+              </p>
+
+              <p>
+                An AI tutor that generates lessons, evaluates answers, understands strengths/weaknesses, and adapts teaching in real-time.
+              </p>
+
+              <p>
+                <a href="https://devpost.com/software/educo-b4z593" target="_blank" rel="noopener noreferrer">Devpost →</a>
+              </p>
+            </div>
+          </div>
+
+          <!-- Achievement 2: Orbit -->
+          <div class="achievement-item">
+            <div class="achievement-header">
+              <h3 class="h3 achievement-title">Orbit - 1st Place at CalHacks 12.0</h3>
+              <p class="achievement-award">3 Track Winner - World's Largest Collegiate Hackathon</p>
+            </div>
+
+            <div class="achievement-carousel">
+              <div class="carousel-container">
+                <div class="carousel-slide active">
+                  <img src="./assets/images/calhacks1.jpeg" alt="Orbit Project 1" loading="lazy">
+                </div>
+                <div class="carousel-slide">
+                  <img src="./assets/images/calhacks2.jpeg" alt="Orbit Project 2" loading="lazy">
+                </div>
+                <div class="carousel-slide">
+                  <img src="./assets/images/calhacks3.jpeg" alt="Orbit Project 3" loading="lazy">
+                </div>
+                <div class="carousel-slide">
+                  <img src="./assets/images/calhacks4.jpeg" alt="Orbit Project 4" loading="lazy">
+                </div>
+                <div class="carousel-slide">
+                  <img src="./assets/images/calhacks5.jpeg" alt="Orbit Project 5" loading="lazy">
+                </div>
+              </div>
+              <div class="carousel-arrow prev" onclick="changeSlide(this, -1)">❮</div>
+              <div class="carousel-arrow next" onclick="changeSlide(this, 1)">❯</div>
+              <div class="carousel-nav">
+                <div class="carousel-dot active" onclick="goToSlide(this, 0)"></div>
+                <div class="carousel-dot" onclick="goToSlide(this, 1)"></div>
+                <div class="carousel-dot" onclick="goToSlide(this, 2)"></div>
+                <div class="carousel-dot" onclick="goToSlide(this, 3)"></div>
+                <div class="carousel-dot" onclick="goToSlide(this, 4)"></div>
+              </div>
+            </div>
+
+            <div class="achievement-content">
+              <p>
+                <strong>Orbit</strong> won 1st Place in 3 tracks at CalHacks 12.0:
+              </p>
+              <ul class="achievement-awards-list">
+                <li>Best Use of Fetch.ai</li>
+                <li>Best Sim.ai (YC X25) workflow</li>
+                <li>Voice-Driven Mobility Automation using omi</li>
+              </ul>
+
+              <p>
+                Competed among 3,300+ hackers and 85 project tracks.
+              </p>
+
+              <p>
+                A voice-driven system that turns conversations into measurable progress. <strong>AI that accelerates what builders do best: build.</strong>
+              </p>
+ 
+
+              <p>
+                <a href="https://devpost.com/software/orbit-n97hqz" target="_blank" rel="noopener noreferrer">Devpost →</a>
+              </p>
+            </div>
+          </div>
+
+        </section>
+
+      </article>
 
 
 
       <!--
         - #CONTACT
       -->
-
+      <!--
       <article class="contact" data-page="contact">
 
         <header>
@@ -1317,14 +1467,14 @@
 
         <section class="mapbox" data-mapbox>
           <figure>
-            <!-- <iframe
+            <iframe
               src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d199666.5651251294!2d-121.58334177520186!3d38.56165006739519!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x809ac672b28397f9%3A0x921f6aaa74197fdb!2sSacramento%2C%20CA%2C%20USA!5e0!3m2!1sen!2sbd!4v1647608789441!5m2!1sen!2sbd"
               width="400" height="300" loading="lazy"></iframe> -->
-            <iframe
+            <!-- <iframe
               src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d6344.545176506403!2d-121.8951596!3d37.3360548!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x808fcca22f6e550b%3A0xa81d52b500622ece!2sCenterra!5e0!3m2!1sen!2sus!4v1724025391969!5m2!1sen!2sus"
               width="400" height="300" loading="lazy"></iframe>
           </figure>
-        </section>
+        </section> -->
 
         <section class="contact-form">
 
