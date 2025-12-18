@@ -46,6 +46,9 @@
       <video class="intro-video" id="introVideo" muted playsinline>
         <source src="./assets/intro-video.mp4" type="video/mp4">
       </video>
+      
+      <!-- Skip Button -->
+      <button class="skip-intro-btn" id="skipIntroBtn">Skip to the good stuff →</button>
     </div>
   </div>
 
@@ -70,7 +73,7 @@
         <div class="info-content">
           <h1 class="name" title="Mohan Kancherla">Mohan Kancherla</h1>
 
-          <p class="title">Full Stack Developer</p>
+          <p class="title">Software Engineer · Gen AI</p>
         </div>
 
         <button class="info_more-btn" data-sidebar-btn>
@@ -96,7 +99,7 @@
             <div class="contact-info">
               <p class="contact-title">Email</p>
 
-              <a href="mailto:omtestmail@gmail.com" class="contact-link">mohankancherla2023@gmail.com</a>
+              <a href="mailto:mohankancherla2023@gmail.com" class="contact-link">Say Hi 👋👋</a>
             </div>
 
           </li>
@@ -241,17 +244,15 @@
 
         <section class="about-text">
           <p>
-            I'm Software Engineer and Developer from San Jose, America, pursuing my Master's degree in Computer Software
-            Engineering at San Jose State University.
-            I enjoy
-            turning complex problems into simple, beautiful and intuitive processes.
+            I'm a full-stack engineer who loves building systems that actually work at scale. Currently finishing my Master's at San Jose State, I've spent time at <strong>ServiceNow</strong> and <strong>NatWest</strong> shipping enterprise software that millions rely on.
           </p>
 
           <p>
-            I love working on projects that challenge me to think critically and find innovative solutions. My passion
-            lies in writing clean, efficient code and improving the performance of systems,
-            whether through optimizing existing infrastructures or creating something from scratch. I thrive in
-            environments where I can own my projects from start to finish, and I am always eager to learn and grow.
+            I get excited about hard problems , whether that's making LLMs more reliable, squeezing out latency, or designing systems that don't fall over when traffic spikes. I take ownership from idea to production and care deeply about code quality.
+          </p>
+
+          <p>
+            When I'm not coding, you'll find me at hackathons (won <strong>CalHacks 12.0</strong> across 3 tracks against 3000+ hackers) or picking up new certifications like <a href="https://cp.certmetrics.com/amazon/en/public/verify/credential/b7520fc3b9e64b36bb667efd93dc78b0" target="_blank" rel="noopener noreferrer" class="cert-link"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/amazonwebservices/amazonwebservices-plain-wordmark.svg" alt="AWS" class="cert-icon">AWS Solutions Architect</a>. I build because I genuinely enjoy it.
           </p>
         </section>
 
@@ -262,22 +263,21 @@
 
         <section class="service">
 
-          <h3 class="h3 service-title">What i'm doing</h3>
+          <h3 class="h3 service-title">What I do</h3>
 
           <ul class="service-list">
 
             <li class="service-item">
 
               <div class="service-icon-box">
-                <img src="./assets/images/icon-design.svg
-                " alt="design icon" width="40">
+                <img src="./assets/images/icon-dev.svg" alt="Full-stack icon" width="40">
               </div>
 
               <div class="service-content-box">
-                <h4 class="h4 service-item-title">Web design</h4>
+                <h4 class="h4 service-item-title">Full-Stack Development</h4>
 
                 <p class="service-item-text">
-                  The most modern and high-quality design made for seamless user experience.
+                  React, Spring Boot, Node.js , building end-to-end systems that scale.
                 </p>
               </div>
 
@@ -286,14 +286,14 @@
             <li class="service-item">
 
               <div class="service-icon-box">
-                <img src="./assets/images/icon-dev.svg" alt="Web development icon" width="40">
+                <img src="./assets/images/icon-app.svg" alt="AI/ML icon" width="40">
               </div>
 
               <div class="service-content-box">
-                <h4 class="h4 service-item-title">Web development</h4>
+                <h4 class="h4 service-item-title">AI/ML Engineering</h4>
 
                 <p class="service-item-text">
-                  Crafting websites as all rounder.
+                  RAG pipelines, LLM integrations, and intelligent automation systems.
                 </p>
               </div>
 
@@ -302,14 +302,14 @@
             <li class="service-item">
 
               <div class="service-icon-box">
-                <img src="./assets/images/icon-app.svg" alt="mobile app icon" width="40">
+                <img src="./assets/images/icon-design.svg" alt="design icon" width="40">
               </div>
 
               <div class="service-content-box">
-                <h4 class="h4 service-item-title">Software solutions</h4>
+                <h4 class="h4 service-item-title">System Design</h4>
 
                 <p class="service-item-text">
-                  Solutions for your problem statement.
+                  Distributed systems, API design, and performance optimization.
                 </p>
               </div>
 
@@ -318,14 +318,14 @@
             <li class="service-item">
 
               <div class="service-icon-box">
-                <img src="./assets/images/freelacing.svg" alt="camera icon" width="40">
+                <img src="./assets/images/freelacing.svg" alt="cloud icon" width="40">
               </div>
 
               <div class="service-content-box">
-                <h4 class="h4 service-item-title">Freelancing</h4>
+                <h4 class="h4 service-item-title">Cloud & DevOps</h4>
 
                 <p class="service-item-text">
-                  I make high-quality projects at a professional level.
+                  AWS, Docker, Kubernetes, Terraform , infrastructure that ships fast.
                 </p>
               </div>
 
@@ -342,7 +342,7 @@
 
         <section class="testimonials">
 
-          <h3 class="h3 testimonials-title">Testimonials</h3>
+          <h3 class="h3 testimonials-title">Kudos 👏</h3>
 
           <ul class="testimonials-list has-scrollbar">
 
@@ -509,7 +509,7 @@
 
             <li class="clients-item">
               <a href="#">
-                <img src="./assets/images/servicenow.svg" style=" height: 130px;" alt="client logo">
+                <img src="./assets/images/servicenow.png" style="padding-right: 20px; filter: invert(1) hue-rotate(180deg);" alt="ServiceNow logo">
               </a>
             </li>
 
@@ -591,7 +591,7 @@
 
               <h4 class="h4 timeline-item-title">San Jose State University</h4>
 
-              <span>2024 — 2026</span>
+              <span>2024 , 2026</span>
 
               <p class="timeline-text">
                 Masters in computer software engineering specilization with distributed systems
@@ -603,7 +603,7 @@
 
               <h4 class="h4 timeline-item-title">Vellore Institute of Technology</h4>
 
-              <span>2018 — 2022</span>
+              <span>2018 , 2022</span>
 
               <p class="timeline-text">
                 Bachelors in Electronics and Communication engineering (9.24/10)
@@ -615,7 +615,7 @@
 
               <h4 class="h4 timeline-item-title">Telangana School of secondary education</h4>
 
-              <span>2016 — 2018</span>
+              <span>2016 , 2018</span>
 
               <p class="timeline-text">
                 Mathematics, Physics and Chemistry (982/1000)
@@ -639,109 +639,102 @@
 
           <ol class="timeline-list">
 
-            <li class="timeline-item">
-
-              <h4 class="h4 timeline-item-title">Software Engineer Intern <p style="color: #056C3E; padding-top: 5px;">
-                  ServiceNow</p>
-              </h4>
-
-              <span>May, 2025 — Current</span>
-
-              <p class="timeline-text">
-                Reduced repeating “how-to” tickets by building RAG Orchestration Agent, using KB retrieval and now APIs,
-                auto handled reducing 4.6k tickets, deflection hit 31%, at an estimate of cutting 400 hrs / quarter..
-              </p>
-              <p class="timeline-text">
-                Added validation on every answer (structure + facts) and routed low-risk asks to faster models.
-                Hallucination rate
-                down by 37%, token spend down 22%, median latency 9.3s to 5.7s..
-              </p>
-              <p class="timeline-text">
-                Added a context memory layer to retain ticket history and layered in response guards (schema/fact
-                checks) with
-                dynamic model routing. This drove one-touch resolutions up 54% to 82%, cut handle time by 18%.
-              </p>
+            <li class="timeline-item collapsible">
+              <div class="timeline-header" data-collapse-toggle>
+                <div class="timeline-header-content">
+                  <h4 class="h4 timeline-item-title">Software Engineer Intern <span style="color: #056C3E;">@ ServiceNow</span></h4>
+                  <span class="timeline-date">May, 2025 , Current</span>
+                </div>
+                <ion-icon name="chevron-down-outline" class="collapse-icon"></ion-icon>
+              </div>
+              <div class="timeline-content">
+                <p class="timeline-text">
+                  Reduced repeating "how-to" tickets by building RAG Orchestration Agent, using KB retrieval and now APIs,
+                  auto handled reducing 4.6k tickets, deflection hit 31%, at an estimate of cutting 400 hrs / quarter..
+                </p>
+                <p class="timeline-text">
+                  Added validation on every answer (structure + facts) and routed low-risk asks to faster models.
+                  Hallucination rate down by 37%, token spend down 22%, median latency 9.3s to 5.7s..
+                </p>
+                <p class="timeline-text">
+                  Added a context memory layer to retain ticket history and layered in response guards (schema/fact
+                  checks) with dynamic model routing. This drove one-touch resolutions up 54% to 82%, cut handle time by 18%.
+                </p>
+              </div>
             </li>
 
-            <li class="timeline-item">
-
-              <h4 class="h4 timeline-item-title">Software Development Engineer <p
-                  style="color: #b16fda; padding-top: 5px;">NatWest</p>
-              </h4>
-
-              <span>July, 2022 — August, 2024</span>
-
-              <p class="timeline-text">
-                Engineered and optimized the in-house chatbot’s client codebase in React, incorporating 5+ features,
-                including
-                enhanced accessibility, significantly improving UI/UX and boosting user engagement.
-              </p>
-              <p class="timeline-text">
-                Utilized Redis for caching SQL query results, and implemented RabbitMQ for message queuing. This
-                efficient
-                distribution of data processing led to a 40% reduction in response times under high loads.
-              </p>
-              <p class="timeline-text">
-                Spearheaded the engineering of multi-channel chat support solution for 3 banking platforms, boosting
-                user
-                satisfaction by 40% and reducing manual chat closures by 25% through automated processes.
-              </p>
-              <p class="timeline-text">
-                Swiftly resolved Redis standby mode during high traffic by implementing rate limiting for API calls
-                using the
-                leaky bucket algorithm, ensuring CPU consumption remained below 70% and enhancing system stability.
-              </p>
-              <p class="timeline-text">
-                Developed a React component toolkit with over 30 customizable options, facilitating the product owners
-                and developers to autonomously create diverse projects, reducing developer involvement and time by 90%.
-              </p>
-
-
-              <p class="timeline-text">
-                Built a scaffolding CLI that automates the generation of 200+ daily test packs summary for the web
-                services
-                into a daily test results dashboard, saving over 4 hours per day for testing team.
-              </p>
-              <p class="timeline-text">
-                Streamlined deployment by automating with Terraform, GitLab, leveraging Docker for containerization,
-                stream-
-                lining deployment time by 50%, and ensuring consistent environment setup across all CI/CD stages
-              </p>
-              <p class="timeline-text">
-                Mentored 3 Software interns on React and documented best practices within the organization.
-              </p>
-
-
+            <li class="timeline-item collapsible">
+              <div class="timeline-header" data-collapse-toggle>
+                <div class="timeline-header-content">
+                  <h4 class="h4 timeline-item-title">Software Development Engineer <span style="color: #b16fda;">@ NatWest</span></h4>
+                  <span class="timeline-date">July, 2022 , August, 2024</span>
+                </div>
+                <ion-icon name="chevron-down-outline" class="collapse-icon"></ion-icon>
+              </div>
+              <div class="timeline-content">
+                <p class="timeline-text">
+                  Engineered and optimized the in-house chatbot's client codebase in React, incorporating 5+ features,
+                  including enhanced accessibility, significantly improving UI/UX and boosting user engagement.
+                </p>
+                <p class="timeline-text">
+                  Utilized Redis for caching SQL query results, and implemented RabbitMQ for message queuing. This
+                  efficient distribution of data processing led to a 40% reduction in response times under high loads.
+                </p>
+                <p class="timeline-text">
+                  Spearheaded the engineering of multi-channel chat support solution for 3 banking platforms, boosting
+                  user satisfaction by 40% and reducing manual chat closures by 25% through automated processes.
+                </p>
+                <p class="timeline-text">
+                  Swiftly resolved Redis standby mode during high traffic by implementing rate limiting for API calls
+                  using the leaky bucket algorithm, ensuring CPU consumption remained below 70% and enhancing system stability.
+                </p>
+                <p class="timeline-text">
+                  Developed a React component toolkit with over 30 customizable options, facilitating the product owners
+                  and developers to autonomously create diverse projects, reducing developer involvement and time by 90%.
+                </p>
+                <p class="timeline-text">
+                  Built a scaffolding CLI that automates the generation of 200+ daily test packs summary for the web
+                  services into a daily test results dashboard, saving over 4 hours per day for testing team.
+                </p>
+                <p class="timeline-text">
+                  Streamlined deployment by automating with Terraform, GitLab, leveraging Docker for containerization,
+                  streamlining deployment time by 50%, and ensuring consistent environment setup across all CI/CD stages
+                </p>
+                <p class="timeline-text">
+                  Mentored 3 Software interns on React and documented best practices within the organization.
+                </p>
+              </div>
             </li>
 
-            <li class="timeline-item">
-
-              <h4 class="h4 timeline-item-title">Software Engineer Intern <p style="color: #dfcb33; padding-top: 5px;">
-                  Vidrona</p>
-              </h4>
-
-              <span>September 2021 - March 2022</span>
-
-              <p class="timeline-text">
-                Developed an intuitive dashboard using ReactJS to provide insights for assets system condition and
-                improved state management efficiency of 30% by integrating Redux and the react-query caching.
-              </p>
-              <p class="timeline-text">
-                Implemented a real-time alert system using Firebase Cloud Messaging to notify operators of
-                abnormalities, enhancing response time and operational efficiency by 40%.
-              </p>
-              <p class="timeline-text">
-                Engineered a secure messaging widget using Socket.io, Node.js, and JWT authentication, facilitating
-                seamless interaction between field operatives and executives, enhancing communication efficiency by 50%.
-              </p>
-
+            <li class="timeline-item collapsible">
+              <div class="timeline-header" data-collapse-toggle>
+                <div class="timeline-header-content">
+                  <h4 class="h4 timeline-item-title">Software Engineer Intern <span style="color: #dfcb33;">@ Vidrona</span></h4>
+                  <span class="timeline-date">September 2021 - March 2022</span>
+                </div>
+                <ion-icon name="chevron-down-outline" class="collapse-icon"></ion-icon>
+              </div>
+              <div class="timeline-content">
+                <p class="timeline-text">
+                  Developed an intuitive dashboard using ReactJS to provide insights for assets system condition and
+                  improved state management efficiency of 30% by integrating Redux and the react-query caching.
+                </p>
+                <p class="timeline-text">
+                  Implemented a real-time alert system using Firebase Cloud Messaging to notify operators of
+                  abnormalities, enhancing response time and operational efficiency by 40%.
+                </p>
+                <p class="timeline-text">
+                  Engineered a secure messaging widget using Socket.io, Node.js, and JWT authentication, facilitating
+                  seamless interaction between field operatives and executives, enhancing communication efficiency by 50%.
+                </p>
+              </div>
             </li>
 
             <!-- <li class="timeline-item">
 
               <h4 class="h4 timeline-item-title">Web designer</h4>
 
-              <span>2010 — 2013</span>
+              <span>2010 , 2013</span>
 
               <p class="timeline-text">
                 Nemo enims ipsam voluptatem, blanditiis praesentium voluptum delenit atque corrupti, quos dolores et
@@ -759,73 +752,98 @@
 
           <h3 class="h3 skills-title">My skills</h3>
 
-          <ul class="skills-list content-card">
+          <div class="skills-grid">
 
-            <li class="skills-item">
-
-              <div class="title-wrapper">
-                <h5 class="h5">Web Development</h5>
-                <data value="80">80%</data>
+            <div class="skill-category">
+              <h4 class="skill-category-title">Languages</h4>
+              <div class="skill-tags">
+                <span class="skill-tag"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/typescript/typescript-original.svg" alt="TypeScript">TypeScript</span>
+                <span class="skill-tag"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg" alt="JavaScript">JavaScript</span>
+                <span class="skill-tag"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg" alt="Python">Python</span>
+                <span class="skill-tag"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/java/java-original.svg" alt="Java">Java</span>
+                <span class="skill-tag"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nodejs/nodejs-original.svg" alt="Node.js">Node.js</span>
               </div>
+            </div>
 
-              <div class="skill-progress-bg">
-                <div class="skill-progress-fill" style="width: 80%;"></div>
+            <div class="skill-category">
+              <h4 class="skill-category-title">Front-End</h4>
+              <div class="skill-tags">
+                <span class="skill-tag"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg" alt="React">React</span>
+                <span class="skill-tag"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/angularjs/angularjs-original.svg" alt="Angular">Angular</span>
+                <span class="skill-tag"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/redux/redux-original.svg" alt="Redux">Redux</span>
+                <span class="skill-tag"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/webpack/webpack-original.svg" alt="Webpack">Webpack</span>
+                <span class="skill-tag"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg" alt="Web APIs">Web APIs</span>
+                <span class="skill-tag">WCAG</span>
               </div>
+            </div>
 
-            </li>
-
-            <li class="skills-item">
-
-              <div class="title-wrapper">
-                <h5 class="h5">Competetive coding</h5>
-                <data value="70">70%</data>
+            <div class="skill-category">
+              <h4 class="skill-category-title">Back-End & APIs</h4>
+              <div class="skill-tags">
+                <span class="skill-tag"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/spring/spring-original.svg" alt="Spring Boot">Spring Boot</span>
+                <span class="skill-tag">REST APIs</span>
+                <span class="skill-tag"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/graphql/graphql-plain.svg" alt="GraphQL">GraphQL</span>
+                <span class="skill-tag"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/socketio/socketio-original.svg" alt="Socket.io">Socket.io</span>
+                <span class="skill-tag"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/rabbitmq/rabbitmq-original.svg" alt="RabbitMQ">RabbitMQ</span>
+                <span class="skill-tag"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/redis/redis-original.svg" alt="Redis">Redis</span>
+                <span class="skill-tag"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/elasticsearch/elasticsearch-original.svg" alt="Elasticsearch">Elasticsearch</span>
               </div>
+            </div>
 
-              <div class="skill-progress-bg">
-                <div class="skill-progress-fill" style="width: 70%;"></div>
+            <div class="skill-category">
+              <h4 class="skill-category-title">AI/ML Stack</h4>
+              <div class="skill-tags">
+                <span class="skill-tag">RAG</span>
+                <span class="skill-tag">LangChain</span>
+                <span class="skill-tag">LLMs</span>
+                <span class="skill-tag">Hugging Face</span>
+                <span class="skill-tag"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/pytorch/pytorch-original.svg" alt="PyTorch">PyTorch</span>
+                <span class="skill-tag"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/tensorflow/tensorflow-original.svg" alt="TensorFlow">TensorFlow</span>
+                <span class="skill-tag"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/keras/keras-original.svg" alt="Keras">Keras</span>
+                <span class="skill-tag"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/pandas/pandas-original.svg" alt="Pandas">Pandas</span>
+                <span class="skill-tag"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/opencv/opencv-original.svg" alt="OpenCV">OpenCV</span>
               </div>
+            </div>
 
-            </li>
-
-            <li class="skills-item">
-
-              <div class="title-wrapper">
-                <h5 class="h5">Management</h5>
-                <data value="70">70%</data>
+            <div class="skill-category">
+              <h4 class="skill-category-title">Cloud & DevOps</h4>
+              <div class="skill-tags">
+                <span class="skill-tag"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/amazonwebservices/amazonwebservices-plain-wordmark.svg" alt="AWS">AWS</span>
+                <span class="skill-tag"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/terraform/terraform-original.svg" alt="Terraform">Terraform</span>
+                <span class="skill-tag"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/docker/docker-original.svg" alt="Docker">Docker</span>
+                <span class="skill-tag"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/kubernetes/kubernetes-plain.svg" alt="Kubernetes">Kubernetes</span>
+                <span class="skill-tag"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/gitlab/gitlab-original.svg" alt="GitLab CI/CD">GitLab CI/CD</span>
+                <span class="skill-tag"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/jenkins/jenkins-original.svg" alt="Jenkins">Jenkins</span>
+                <span class="skill-tag"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nginx/nginx-original.svg" alt="Nginx">Nginx</span>
               </div>
+            </div>
 
-              <div class="skill-progress-bg">
-                <div class="skill-progress-fill" style="width: 70%;"></div>
+            <div class="skill-category">
+              <h4 class="skill-category-title">Databases & Monitoring</h4>
+              <div class="skill-tags">
+                <span class="skill-tag"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/postgresql/postgresql-original.svg" alt="PostgreSQL">PostgreSQL</span>
+                <span class="skill-tag"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mongodb/mongodb-original.svg" alt="MongoDB">MongoDB</span>
+                <span class="skill-tag"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/redis/redis-original.svg" alt="Redis">Redis</span>
+                <span class="skill-tag"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/grafana/grafana-original.svg" alt="Grafana">Grafana</span>
+                <span class="skill-tag">Nagios</span>
+                <span class="skill-tag">PagerDuty</span>
               </div>
+            </div>
 
-            </li>
-            <li class="skills-item">
-
-              <div class="title-wrapper">
-                <h5 class="h5">UI UX</h5>
-                <data value="70">70%</data>
+            <div class="skill-category">
+              <h4 class="skill-category-title">Tools</h4>
+              <div class="skill-tags">
+                <span class="skill-tag"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/git/git-original.svg" alt="Git">Git</span>
+                <span class="skill-tag"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/postman/postman-original.svg" alt="Postman">Postman</span>
+                <span class="skill-tag"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/chrome/chrome-original.svg" alt="DevTools">DevTools</span>
+                <span class="skill-tag"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/figma/figma-original.svg" alt="Figma">Figma</span>
+                <span class="skill-tag"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/vscode/vscode-original.svg" alt="VS Code">VS Code</span>
+                <span class="skill-tag"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/jira/jira-original.svg" alt="Jira">Jira</span>
+                <span class="skill-tag">Agile/Scrum</span>
               </div>
+            </div>
 
-              <div class="skill-progress-bg">
-                <div class="skill-progress-fill" style="width: 70%;"></div>
-              </div>
-
-            </li>
-
-            <li class="skills-item">
-
-              <div class="title-wrapper">
-                <h5 class="h5">Devops</h5>
-                <data value="50">50%</data>
-              </div>
-
-              <div class="skill-progress-bg">
-                <div class="skill-progress-fill" style="width: 50%;"></div>
-              </div>
-
-            </li>
-
-          </ul>
+          </div>
 
         </section>
 
@@ -1344,13 +1362,17 @@
           <div class="achievement-item">
             <div class="achievement-header">
               <h3 class="h3 achievement-title">EduCo - Winner at Self-Evolving Agents Hackathon</h3>
-              <p class="achievement-award">Best Use of Airia - Enterprise AI Simplified & Best Use of Fastino - Fastino Labs</p>
+              <time class="achievement-date">Nov 2025</time>
             </div>
+            <p class="achievement-award">2 Track Winner</p>
 
             <div class="achievement-carousel">
               <div class="carousel-container">
                 <div class="carousel-slide active">
                   <img src="./assets/images/selfevolving1.jpeg" alt="EduCo Project 1" loading="lazy">
+                </div>
+                <div class="carousel-slide">
+                  <img src="./assets/images/selfevolving5.jpeg" alt="EduCo Project 4" loading="lazy">
                 </div>
                 <div class="carousel-slide">
                   <img src="./assets/images/selfevolving2.jpeg" alt="EduCo Project 2" loading="lazy">
@@ -1373,7 +1395,10 @@
             </div>
 
             <div class="achievement-content">
-
+              <ul class="achievement-awards-list">
+                <li>Best Use of Airia - Enterprise AI Simplified</li>
+                <li>Best Use of Fastino - Fastino Labs</li>
+              </ul>
               <p>
                 <strong>AI shouldn't just teach you - it should learn you.</strong>
               </p>
@@ -1382,9 +1407,7 @@
                 An AI tutor that generates lessons, evaluates answers, understands strengths/weaknesses, and adapts teaching in real-time.
               </p>
 
-              <p>
-                <a href="https://devpost.com/software/educo-b4z593" target="_blank" rel="noopener noreferrer">Devpost →</a>
-              </p>
+              <a href="https://devpost.com/software/educo-b4z593" target="_blank" rel="noopener noreferrer" class="devpost-link"><ion-icon name="open-outline"></ion-icon> View on Devpost</a>
             </div>
           </div>
 
@@ -1392,8 +1415,9 @@
           <div class="achievement-item">
             <div class="achievement-header">
               <h3 class="h3 achievement-title">Orbit - 1st Place at CalHacks 12.0</h3>
-              <p class="achievement-award">3 Track Winner - World's Largest Collegiate Hackathon</p>
+              <time class="achievement-date">Oct 2025</time>
             </div>
+            <p class="achievement-award">3 Track Winner - World's Largest Collegiate Hackathon</p>
 
             <div class="achievement-carousel">
               <div class="carousel-container">
@@ -1443,8 +1467,69 @@
               </p>
  
 
+              <a href="https://devpost.com/software/orbit-n97hqz" target="_blank" rel="noopener noreferrer" class="devpost-link"><ion-icon name="open-outline"></ion-icon> View on Devpost</a>
+            </div>
+          </div>
+
+          <!-- Achievement 3: VIT Graduation -->
+          <div class="achievement-item">
+            <div class="achievement-header">
+              <h3 class="h3 achievement-title">Graduated from VIT with Distinction</h3>
+              <time class="achievement-date">Jul 2022</time>
+            </div>
+            <p class="achievement-award"> B.Tech in Electronics & Communication | 9.25 CGPA</p>
+            
+            <div class="achievement-carousel">
+              <div class="carousel-container">
+                <div class="carousel-slide active">
+                  <img src="./assets/images/VIT_Graduate.jpeg" alt="VIT Graduation">
+                </div>
+              </div>
+            </div>
+
+            <div class="achievement-content">
               <p>
-                <a href="https://devpost.com/software/orbit-n97hqz" target="_blank" rel="noopener noreferrer">Devpost →</a>
+                Completed my Bachelor's degree at Vellore Institute of Technology with a CGPA of 9.25/10, graduating with distinction.
+              </p>
+            </div>
+          </div>
+
+          <!-- Achievement 4: Zero Waste Management Club -->
+          <div class="achievement-item">
+            <div class="achievement-header">
+              <h3 class="h3 achievement-title">Founder & Chairperson - Zero Waste Management Club</h3>
+              <time class="achievement-date">2019</time>
+            </div>
+            <p class="achievement-award">200+ Active Members | VIT Vellore</p>
+            
+            <div class="achievement-carousel">
+              <div class="carousel-container">
+                <div class="carousel-slide active">
+                  <img src="./assets/images/18BEC0024_Chair person.jpg" alt="Zero Waste Management Club">
+                </div>
+              </div>
+            </div>
+
+            <div class="achievement-content">
+              <p>
+                Founded an initiative to motivate students to work on innovative waste management methods via research and projects. Zero waste is about transforming how we think — from managing waste to managing resources.
+              </p>
+
+              <a href="http://linkedin.com/company/zero-waste-management-club/" target="_blank" rel="noopener noreferrer" class="devpost-link"><ion-icon name="logo-linkedin"></ion-icon> View on LinkedIn</a>
+            </div>
+          </div>
+
+          <!-- Achievement 5: NatWest Awards -->
+          <div class="achievement-item">
+            <div class="achievement-header">
+              <h3 class="h3 achievement-title">NatWest Awards & Recognition</h3>
+              <time class="achievement-date">2022 - 2024</time>
+            </div>
+            <p class="achievement-award">Living Our Values Award | NatWest Challenge Winner FY22 & FY23</p>
+
+            <div class="achievement-content">
+              <p>
+                Recognized for exemplifying NatWest's core values and winning the internal NatWest Challenge competition in consecutive years (FY22 and FY23).
               </p>
             </div>
           </div>
@@ -1476,7 +1561,7 @@
           </figure>
         </section> -->
 
-        <section class="contact-form">
+        <!-- <section class="contact-form">
 
           <h3 class="h3 form-title">Contact Form</h3>
 
@@ -1497,7 +1582,7 @@
 
           </form>
 
-        </section>
+        </section> -->
 
       </article>
 

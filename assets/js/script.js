@@ -1,5 +1,17 @@
 'use strict';
 
+// Collapsible Experience Items
+document.addEventListener('DOMContentLoaded', function() {
+  const collapseToggles = document.querySelectorAll('[data-collapse-toggle]');
+  
+  collapseToggles.forEach(toggle => {
+    toggle.addEventListener('click', function() {
+      const timelineItem = this.closest('.timeline-item.collapsible');
+      timelineItem.classList.toggle('expanded');
+    });
+  });
+});
+
 // Carousel functionality for achievements
 function changeSlide(button, direction) {
   const carousel = button.closest('.achievement-carousel');
@@ -29,10 +41,56 @@ function goToSlide(dot, index) {
 }
 
 // Simple loading sequence: 2s loading -> video -> disappear when done
+// Only shows on first visit, expires after 10 minutes or when tab is closed
 window.addEventListener('load', function() {
   const loadingOverlay = document.getElementById('loadingOverlay');
   const introVideo = document.getElementById('introVideo');
   const mainContent = document.querySelector('main');
+  
+  const INTRO_EXPIRY_MS = 10 * 60 * 1000; // 10 minutes
+  const introTimestamp = sessionStorage.getItem('introShownAt');
+  const now = Date.now();
+  
+  // Check if intro was already shown and hasn't expired
+  const shouldSkipIntro = introTimestamp && (now - parseInt(introTimestamp)) < INTRO_EXPIRY_MS;
+  
+  if (shouldSkipIntro) {
+    // Skip the intro - hide overlay immediately and show content
+    if (loadingOverlay) {
+      loadingOverlay.classList.add('hidden');
+      loadingOverlay.style.display = 'none';
+    }
+    if (introVideo) {
+      introVideo.remove();
+    }
+    if (mainContent) {
+      mainContent.classList.add('fade-in');
+    }
+    return;
+  }
+  
+  // Mark intro as shown with current timestamp
+  sessionStorage.setItem('introShownAt', now.toString());
+  
+  // Skip intro function
+  const skipIntroBtn = document.getElementById('skipIntroBtn');
+  function skipIntro() {
+    if (introVideo) {
+      introVideo.pause();
+      introVideo.remove();
+    }
+    if (loadingOverlay) {
+      loadingOverlay.classList.add('hidden');
+    }
+    if (mainContent) {
+      mainContent.classList.add('fade-in');
+    }
+  }
+  
+  // Add click handler for skip button
+  if (skipIntroBtn) {
+    skipIntroBtn.addEventListener('click', skipIntro);
+  }
   
   if (introVideo) {
     // Start video after 2 seconds
@@ -43,14 +101,7 @@ window.addEventListener('load', function() {
     // Stop video 0.5 seconds before it ends
     introVideo.addEventListener('timeupdate', function() {
       if (introVideo.duration && introVideo.currentTime >= introVideo.duration - 0.5) {
-        introVideo.pause();
-        loadingOverlay.classList.add('hidden');
-        introVideo.remove();
-        
-        // Trigger fade-in animation for website
-        if (mainContent) {
-          mainContent.classList.add('fade-in');
-        }
+        skipIntro();
       }
     });
   }
@@ -199,30 +250,65 @@ console.log(cases);
 const navigationLinks = document.querySelectorAll("[data-nav-link]");
 const pages = document.querySelectorAll("[data-page]");
 
+// Function to navigate to a specific page
+function navigateToPage(pageName) {
+  const targetPage = pageName.toLowerCase().trim();
+  
+  // Remove active from all pages and nav links first
+  for (let j = 0; j < pages.length; j++) {
+    pages[j].classList.remove("active");
+  }
+  for (let j = 0; j < navigationLinks.length; j++) {
+    navigationLinks[j].classList.remove("active");
+  }
+
+  // Add active to matching page and nav link
+  for (let j = 0; j < pages.length; j++) {
+    const pageData = pages[j].dataset.page.toLowerCase().trim();
+    
+    if (targetPage === pageData) {
+      pages[j].classList.add("active");
+      
+      // Find and activate the corresponding nav link
+      for (let k = 0; k < navigationLinks.length; k++) {
+        if (navigationLinks[k].innerHTML.toLowerCase().trim() === targetPage) {
+          navigationLinks[k].classList.add("active");
+          break;
+        }
+      }
+      
+      window.scrollTo(0, 0);
+      break;
+    }
+  }
+}
+
+// Handle URL hash routing
+function handleHashChange() {
+  const hash = window.location.hash.slice(1); // Remove the '#'
+  if (hash) {
+    navigateToPage(hash);
+  } else {
+    // Default to 'about' if no hash
+    navigateToPage('about');
+  }
+}
+
+// Listen for hash changes (back/forward navigation)
+window.addEventListener('hashchange', handleHashChange);
+
+// On initial page load, check the hash
+document.addEventListener('DOMContentLoaded', function() {
+  // Small delay to ensure everything is loaded
+  setTimeout(handleHashChange, 100);
+});
+
 // add event to all nav link
 for (let i = 0; i < navigationLinks.length; i++) {
   navigationLinks[i].addEventListener("click", function () {
     const buttonText = this.innerHTML.toLowerCase().trim();
-
-    // Remove active from all pages and nav links first
-    for (let j = 0; j < pages.length; j++) {
-      pages[j].classList.remove("active");
-    }
-    for (let j = 0; j < navigationLinks.length; j++) {
-      navigationLinks[j].classList.remove("active");
-    }
-
-    // Add active to matching page and current nav link
-    for (let j = 0; j < pages.length; j++) {
-      const pageData = pages[j].dataset.page.toLowerCase().trim();
-      
-      if (buttonText === pageData) {
-        pages[j].classList.add("active");
-        this.classList.add("active");
-        window.scrollTo(0, 0);
-        break;
-      }
-    }
-
+    
+    // Update URL hash (this will trigger hashchange event)
+    window.location.hash = buttonText;
   });
 }
