@@ -1,1619 +1,423 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
   <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Mohan's craftsmann corner</title>
-
-  <!--
-    - favicon
-  -->
-  <link rel="shortcut icon" href="./assets/images/logo.ico" type="image/x-icon">
-
-  <!--
-    - custom css link
-  -->
-  <link rel="stylesheet" href="./assets/css/style.css">
-
-  <!--
-    - google font link dummy
-  -->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Mohan Kancherla · Staff Software Engineer, Security and AI</title>
+  <meta name="description" content="Mohan Kancherla is a Staff Software Engineer at Palo Alto Networks, in CyberArk R&D, working on machine identity. Previously built RAG agents at ServiceNow. Winner at CalHacks 12.0.">
+  <link rel="canonical" href="https://ganeshmohank.github.io/portifolio/">
+  <meta name="theme-color" content="#0a0a09">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Mohan Kancherla · Staff Software Engineer">
+  <meta property="og:description" content="Machine identity, RAG agents and distributed systems. A portfolio that evolves from its owner's public GitHub activity.">
+  <meta property="og:url" content="https://ganeshmohank.github.io/portifolio/">
+  <meta property="og:image" content="https://ganeshmohank.github.io/portifolio/assets/images/og.jpg">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="icon" href="./assets/images/logo.ico" type="image/x-icon">
+  <link rel="preload" href="./assets/fonts/anybody-latin-standard-normal.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="./assets/fonts/hanken-grotesk-latin-wght-normal.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="./assets/css/main.css">
+  <script>document.documentElement.classList.add('js');</script>
+  <script type="importmap">{ "imports": { "three": "./assets/vendor/three/three.module.min.js" } }</script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "name": "Mohan Kancherla",
+    "jobTitle": "Staff Software Engineer",
+    "url": "https://ganeshmohank.github.io/portifolio/",
+    "sameAs": ["https://www.linkedin.com/in/mohan-kancherla/", "https://github.com/Ganeshmohank"]
+  }
+  </script>
 </head>
 
 <body>
+  <a class="skip" href="#about">Skip to content</a>
 
-  <!--
-    - #LOADING PAGE
-  -->
-  <div class="loading-overlay" id="loadingOverlay">
-    <div class="loading-container">
-      <!-- Loading Screen (First 2 seconds) -->
-      <div class="loading-screen" id="loadingScreen">
-        <div class="loading-content">
-          <p class="loading-label">Loading</p>
-          <div class="loading-bar-container">
-            <div class="loading-bar"></div>
+  <div class="curtain" aria-hidden="true"></div>
+  <canvas id="field" aria-hidden="true"></canvas>
+  <canvas id="stage" aria-hidden="true"></canvas>
+  <div id="space-labels" aria-hidden="true"></div>
+
+  <header class="bar">
+    <a class="bar-name" href="#top">Mohan Kancherla</a>
+    <nav aria-label="Sections">
+      <a href="#work">Work</a>
+      <a href="#ask">Ask</a>
+      <a href="#achievements">Wins</a>
+      <a href="#projects">Projects</a>
+      <a class="bar-cta" href="#contact">Contact</a>
+    </nav>
+  </header>
+
+  <main id="top">
+
+    <section class="hero" data-form="organism" data-side="0" data-dim="1">
+      <h1 class="name" aria-label="Mohan Kancherla">
+        <span class="line" data-line>Mohan</span>
+        <span class="line" data-line>Kancherla</span>
+      </h1>
+      <div class="hero-foot">
+        <p class="hero-lede">Staff Software Engineer at Palo Alto Networks, in CyberArk R&amp;D. I work on machine identity, and I build AI agents that hold up in production.</p>
+        <div class="hero-side">
+          <a class="button" href="#work">See the work
+            <svg class="arrow arrow-down" viewBox="0 0 16 16" aria-hidden="true"><path d="M8 2v11M3 8l5 5 5-5"/></svg>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <section class="about" id="about" data-form="organism" data-side="0.5" data-dim="0.14">
+      <h2 class="h-section" data-rise>From idea to production</h2>
+      <p class="statement" data-statement>I get excited about hard problems: making LLMs more reliable, squeezing out latency, keeping systems up when traffic spikes.</p>
+      <div class="about-cols">
+        <p data-rise>I love building systems that actually work at scale. I've shipped enterprise software at Palo Alto Networks, ServiceNow and NatWest, and I finished my Master's at San Jose State in 2026 with a 3.8.</p>
+        <p data-rise>I take ownership from idea to production and care deeply about code quality. When I'm not at work, you'll find me at hackathons or picking up certifications like <a href="https://cp.certmetrics.com/amazon/en/public/verify/credential/b7520fc3b9e64b36bb667efd93dc78b0" target="_blank" rel="noopener noreferrer">AWS Solutions Architect</a>. I build because I genuinely enjoy it.</p>
+      </div>
+    </section>
+
+    <section class="cyber" id="work">
+      <div class="cyber-copy">
+        <div class="cyber-head">
+          <h2 class="h-giant">Cybersecurity</h2>
+          <h3 class="h-job">Palo Alto Networks</h3>
+          <p class="job-role">Staff Software Engineer, Machine Identity Management. CyberArk R&amp;D, Santa Clara. June 2026 to present.</p>
+          <p class="job-lede">I work on machine identity, end to end, from schema and backend APIs to the customer-facing UI.</p>
+        </div>
+        <ol class="cyber-steps">
+          <li><h3 class="h-job">Signed by the root</h3><p>Machine identity is what I work on. Every service proves who it is with a certificate that chains back to a trusted root.</p></li>
+          <li><h3 class="h-job">Encrypted in transit</h3><p>With an identity it can prove, one service can talk to another over mutual TLS. Anyone watching the wire sees noise.</p></li>
+          <li><h3 class="h-job">Access groups</h3><p>I replaced all-or-nothing RBAC with granular access groups. Least privilege is now a shared layer that services enforce by default.</p></li>
+          <li><h3 class="h-job">Audit trail</h3><p>I moved the platform's audit trail onto Palo Alto's central logging after the acquisition, one environment at a time, behind feature flags.</p></li>
+        </ol>
+      </div>
+      <div class="cyber-stage" id="cyber-stage" aria-hidden="true"></div>
+    </section>
+
+    <section class="pin-scene" id="servicenow">
+      <div class="pipeline-head">
+        <h2 class="h-section">31% of tickets never needed a person</h2>
+        <h3 class="h-job serv-name">ServiceNow</h3>
+        <p class="job-role">Software Engineer, internal AI platform. Santa Clara. May 2025 to May 2026.</p>
+        <p class="pipeline-hint">I shipped a RAG support agent that resolves recurring tickets on its own, and the retrieval and tooling underneath it.</p>
+      </div>
+      <ol class="panels">
+        <li class="panel"><h3 class="h-job">Tickets in</h3><p>Repeating "how-to" tickets arrive, the ones that eat up a support team's week.</p><p class="panel-figure"><b>2.6k</b> tickets auto-handled</p></li>
+        <li class="panel"><h3 class="h-job">Retrieval</h3><p>Knowledge-base retrieval and Now APIs fetch what an answer actually needs.</p></li>
+        <li class="panel"><h3 class="h-job">Memory</h3><p>A context memory layer retains ticket history, so nobody has to explain twice.</p><p class="panel-figure"><b>54% to 82%</b> one-touch resolutions, handle time down 18%</p></li>
+        <li class="panel"><h3 class="h-job">Routing</h3><p>Dynamic model routing sends low-risk asks to faster models.</p><p class="panel-figure"><b>9.3s to 5.7s</b> median latency, token spend down 22%</p></li>
+        <li class="panel"><h3 class="h-job">Model</h3><p>The LLM drafts an answer from what was retrieved and remembered.</p></li>
+        <li class="panel"><h3 class="h-job">Guards</h3><p>Validation checks every answer's structure and facts before anyone sees it.</p><p class="panel-figure"><b>37%</b> lower hallucination rate</p></li>
+        <li class="panel"><h3 class="h-job">Deflected</h3><p>The sparks breaking away are the tickets that never needed a person, exactly 31% of them.</p><p class="panel-figure"><b>31%</b> deflection, an estimated 400 hours saved a quarter</p></li>
+      </ol>
+      <svg class="leader" aria-hidden="true"><line x1="0" y1="0" x2="0" y2="0"/></svg>
+    </section>
+
+    <section class="work natwest" data-form="vault" data-side="0.56" data-dim="0.95">
+      <article class="job" id="natwest">
+        <h3 class="h-job" data-rise>NatWest</h3>
+        <p class="job-lede" data-rise>Banks don't get quiet hours. Two years on the chat behind 3 banking platforms, summed up the way a bank would.</p>
+        <div class="statement-paper" data-rise>
+          <header class="statement-head">
+            <div><strong>Statement of work</strong><span>Software Engineer, Retail Banking, Bangalore</span></div>
+            <div class="statement-period"><span>Period</span><strong>Jul 2022 to Jul 2024</strong></div>
+          </header>
+          <table class="ledger">
+            <thead><tr><th scope="col">Description</th><th scope="col">Change</th></tr></thead>
+            <tbody>
+              <tr><td>Response times under load, with Redis caching and RabbitMQ queues</td><td>&minus;40%</td></tr>
+              <tr><td>User satisfaction, multi-channel chat support</td><td>+40%</td></tr>
+              <tr><td>Chats a person had to close by hand</td><td>&minus;25%</td></tr>
+              <tr><td>Deployment time, Terraform on AWS ECS</td><td>&minus;50%</td></tr>
+              <tr><td>Testers' day, from a CLI summarising 200+ test packs daily</td><td>+4 hrs</td></tr>
+              <tr><td>CPU in a traffic surge, held by leaky-bucket rate limiting</td><td>&lt;70%</td></tr>
+            </tbody>
+          </table>
+          <footer class="statement-foot"><span>Closing balance</span><strong>Living Our Values Award. NatWest Challenge winner, FY22 and FY23.</strong></footer>
+        </div>
+      </article>
+    </section>
+
+    <section class="work" data-form="mesh" data-side="0.56" data-dim="0.95">
+      <article class="job" id="vidrona">
+        <h3 class="h-job" data-rise>Vidrona</h3>
+        <p class="job-role" data-rise>Software Engineer Intern, remote from the UK team. September 2021 to March 2022.</p>
+        <p class="job-lede" data-rise>Where it started: getting people in the field and people in the office looking at the same picture, and talking on the same line.</p>
+        <ul class="results">
+          <li data-rise><b data-count>30%</b><span>better state management on a ReactJS asset dashboard, using Redux and react-query</span></li>
+          <li data-rise><b data-count>50%</b><span>better communication, through a secure messaging widget with Socket.io, Node.js and JWT</span></li>
+        </ul>
+      </article>
+    </section>
+
+    <section class="ask" id="ask" data-ask>
+      <div class="ask-copy">
+        <h2 class="h-section" data-rise>Ask my résumé</h2>
+        <p class="ask-lede" data-rise>A real retrieval pipeline, running in your browser over this site's text. Your question becomes a vector and flies into the space on this screen. There's no LLM, only quoted sources, so it can't make anything up. Ask something it doesn't know and watch the guard refuse.</p>
+        <form class="ask-form" id="ask-form" data-rise>
+          <label class="visually-hidden" for="ask-input">Your question</label>
+          <input id="ask-input" type="text" autocomplete="off" placeholder="What does he do at Palo Alto Networks?" maxlength="160">
+          <button class="button" type="submit">Ask</button>
+        </form>
+        <div class="ask-chips" id="ask-chips" data-rise>
+          <button type="button" class="chip">How does he secure machines?</button>
+          <button type="button" class="chip">Did he win any hackathons?</button>
+          <button type="button" class="chip">What is P2PFile?</button>
+          <button type="button" class="chip">What's his favorite color?</button>
+        </div>
+        <div class="ask-engine">
+          <button type="button" class="chip chip-engine" id="ask-engine" hidden>Switch to a neural model</button>
+          <p class="ask-engine-note" id="ask-engine-note" hidden>Optional: a 23 MB embedding model that runs on your device and matches meaning, not just words.</p>
+        </div>
+        <ul class="legend" id="ask-legend" aria-label="Colours in the vector space"></ul>
+        <div class="ask-result" id="ask-result" aria-live="polite"></div>
+        <noscript><p>Asking questions needs JavaScript. Everything it knows is on this page.</p></noscript>
+      </div>
+    </section>
+
+    <section class="ar" id="ar" data-form="ar" data-side="0" data-dim="0.95">
+      <h2 class="h-section" data-rise>My hidden talent: the AR world</h2>
+      <p data-rise>People come to me for security and agents. The underrated skill is augmented reality: marker tracking and location-based experiences that run on the web, no app required. The floor gets scanned, a marker locks on, and an object sits in the world.</p>
+      <p class="ar-try" data-rise><span class="ar-fine">Move your cursor. The object is anchored to it.</span><span class="ar-touch">Tap around. The object anchors where you touch.</span></p>
+    </section>
+
+    <section class="sjsu" id="sjsu">
+      <div class="sjsu-stage">
+        <svg class="sjsu-helmet" viewBox="0 0 400 400" role="img" aria-label="A Spartan helmet">
+          <path class="crest" d="M84 214C52 110 120 22 226 26c74 3 130 50 146 118-30-42-74-62-124-60-70 3-126 52-136 130z"/>
+          <path class="crest-lines" d="M101.3 176.5L59.0 164.4M111.4 151.2L79.4 134.6M126.3 128.4L92.1 100.7M145.5 109.1L122.6 81.3M168.2 93.9L147.5 55.1M193.4 83.6L183.1 49.1M220.1 78.5L216.3 34.7M247.4 78.9L251.5 43.1M274.0 84.7L287.6 42.8M299.0 95.6L316.7 64.3M321.2 111.4L350.1 78.2M339.9 131.2L368.5 109.3M354.2 154.4L393.8 135.1"/>
+          <path class="shell" d="M112 214c-2-76 58-124 134-118 70 6 112 62 106 128l-6 86-32 62h-34l6-78c2-18-10-28-26-28h-30l-14 88-52-30c-36-22-52-62-52-110z"/>
+          <path class="eye" d="M352 214l-84 2c-16 0-26 14-26 28v12h30c14 0 26 8 30 22l-4 40 26-40z"/>
+          <path class="brow" d="M122 206c62-28 150-34 230-14" />
+          <path class="cheek" d="M190 262c10 18 14 40 10 66" />
+        </svg>
+        <div class="sjsu-copy">
+          <h2 class="h-section">Graduated a Spartan</h2>
+          <p>Master of Science in Computer Software Engineering, San José State University, May 2026. 3.8 GPA, with distributed systems, machine learning and deep learning along the way.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="wins">
+      <h2 class="h-section wins-title" data-rise>Two hackathons, two wins</h2>
+
+      <article class="ticket ticket-a" id="achievements">
+        <div class="ticket-stub" aria-hidden="true"><span>Admit one</span><b>Winner</b><span>CalHacks 12.0</span></div>
+        <div class="ticket-body">
+          <div class="ticket-copy">
+            <h3 class="h-section">Orbit, 3 wins at CalHacks 12.0</h3>
+            <div>
+              <p>Talk through a meeting, and the work gets done. Agents read the Zoom transcript and act on your voice through Omi hardware, across Linear, Slack, Gmail and Calendar using 4 Composio MCP servers. Winner for Fetch.ai, Sim.ai and omi, out of 2,178+ participants.</p>
+              <p class="win-links">
+                <a href="https://devpost.com/software/orbit-n97hqz" target="_blank" rel="noopener noreferrer">Orbit on Devpost</a>
+                <a href="https://github.com/Ganeshmohank/orbit" target="_blank" rel="noopener noreferrer">Source on GitHub</a>
+              </p>
+            </div>
+          </div>
+          <div class="ticket-photos">
+            <img src="./assets/images/wins/calhacks5.webp" width="1400" height="788" alt="A crowd of hackers behind giant illuminated CalHacks letters" loading="lazy" decoding="async">
+            <img src="./assets/images/wins/calhacks2.webp" width="1000" height="563" alt="The winners slide on stage, listing Orbit in first place" loading="lazy" decoding="async">
+            <img src="./assets/images/wins/calhacks4.webp" width="1000" height="750" alt="A group of hackers posing together in front of sponsor banners" loading="lazy" decoding="async">
+            <img src="./assets/images/wins/calhacks3.webp" width="1000" height="750" alt="Selfie of a group of hackers wearing event lanyards, one holding up a laptop" loading="lazy" decoding="async">
           </div>
         </div>
-      </div>
-      
-      <!-- Video Background -->
-      <video class="intro-video" id="introVideo" muted playsinline>
-        <source src="./assets/intro-video.mp4" type="video/mp4">
-      </video>
-      
-      <!-- Skip Button -->
-      <button class="skip-intro-btn" id="skipIntroBtn">Skip to the good stuff →</button>
-    </div>
-  </div>
-
-  <!--
-    - #MAIN
-  -->
-
-  <main>
-
-    <!--
-      - #SIDEBAR
-    -->
-
-    <aside class="sidebar" data-sidebar>
-
-      <div class="sidebar-info">
-
-        <figure class="avatar-box">
-          <img src="./assets/images/my-avatar.png" alt="Mohan Kancherla" width="80">
-        </figure>
-
-        <div class="info-content">
-          <h1 class="name" title="Mohan Kancherla">Mohan Kancherla</h1>
-
-          <p class="title">Software Engineer · Gen AI</p>
-        </div>
-
-        <button class="info_more-btn" data-sidebar-btn>
-          <span>Show Contacts</span>
-
-          <ion-icon name="chevron-down"></ion-icon>
-        </button>
-
-      </div>
-
-      <div class="sidebar-info_more">
-
-        <div class="separator"></div>
-
-        <ul class="contacts-list">
-
-          <li class="contact-item">
-
-            <div class="icon-box">
-              <ion-icon name="mail-outline"></ion-icon>
-            </div>
-
-            <div class="contact-info">
-              <p class="contact-title">Email</p>
-
-              <a href="mailto:mohankancherla2023@gmail.com" class="contact-link">Say Hi 👋👋</a>
-            </div>
-
-          </li>
-
-          <!-- <li class="contact-item">
-
-            <div class="icon-box">
-              <ion-icon name="phone-portrait-outline"></ion-icon>
-            </div>
-
-            <div class="contact-info">
-              <p class="contact-title">Phone</p>
-
-              <a href="tel:+12133522795" class="contact-link">+1 6693257745</a>
-            </div>
-
-          </li> -->
-
-          <li class="contact-item">
-
-            <div class="icon-box">
-              <ion-icon name="calendar-outline"></ion-icon>
-            </div>
-
-            <div class="contact-info">
-              <p class="contact-title">Degree</p>
-
-              <time datetime="1982-06-23">Masters</time>
-            </div>
-
-          </li>
-
-          <li class="contact-item">
-
-            <div class="icon-box">
-              <ion-icon name="location-outline"></ion-icon>
-            </div>
-
-            <div class="contact-info">
-              <p class="contact-title">Location</p>
-
-              <address>San Jose, USA</address>
-            </div>
-
-          </li>
-
-        </ul>
-
-        <div class="separator"></div>
-
-        <ul class="social-list">
-
-          <li class="social-item">
-            <a href="https://www.linkedin.com/in/mohan-kancherla/" class="social-link">
-              <ion-icon name="logo-linkedin"></ion-icon>
-            </a>
-          </li>
-
-          <li class="social-item">
-            <a href="https://www.facebook.com/mohan.kg.519/" class="social-link">
-              <ion-icon name="logo-facebook"></ion-icon>
-            </a>
-          </li>
-
-          <li class="social-item">
-            <a href="https://www.instagram.com/mohan_iongram/" class="social-link">
-              <ion-icon name="logo-instagram"></ion-icon>
-            </a>
-          </li>
-
-          <li class="social-item">
-            <a href="https://github.com/Ganeshmohank" class="social-link">
-              <ion-icon name="logo-github"></ion-icon>
-            </a>
-          </li>
-
-        </ul>
-
-      </div>
-
-    </aside>
-
-
-
-
-
-    <!--
-      - #main-content
-    -->
-
-    <div class="main-content">
-
-      <!--
-        - #NAVBAR
-      -->
-
-      <nav class="navbar">
-
-        <ul class="navbar-list">
-
-          <li class="navbar-item">
-            <button class="navbar-link  active" data-nav-link>About</button>
-          </li>
-
-          <li class="navbar-item">
-            <button class="navbar-link" data-nav-link>Achievements</button>
-          </li>
-
-          <li class="navbar-item">
-            <button class="navbar-link" data-nav-link>Resume</button>
-          </li>
-
-          <li class="navbar-item">
-            <button class="navbar-link" data-nav-link>Projects</button>
-          </li>
-
-          <li class="navbar-item">
-            <button id="cases" class="navbar-link" data-nav-link>Case</button>
-          </li>
-
-          <!-- <li class="navbar-item">
-            <button class="navbar-link" data-nav-link>Contact</button>
-          </li> -->
-
-        </ul>
-
-      </nav>
-
-
-
-
-
-      <!--
-        - #ABOUT
-      -->
-
-      <article class="about  active" data-page="about">
-
-        <header>
-          <h2 class="h2 article-title">About me</h2>
-        </header>
-
-        <section class="about-text">
-          <p>
-            I'm a full-stack engineer who loves building systems that actually work at scale. Currently finishing my Master's at San Jose State, I've spent time at <strong>ServiceNow</strong> and <strong>NatWest</strong> shipping enterprise software that millions rely on.
-          </p>
-
-          <p>
-            I get excited about hard problems , whether that's making LLMs more reliable, squeezing out latency, or designing systems that don't fall over when traffic spikes. I take ownership from idea to production and care deeply about code quality.
-          </p>
-
-          <p>
-            When I'm not coding, you'll find me at hackathons (won <strong>CalHacks 12.0</strong> across 3 tracks against 3000+ hackers) or picking up new certifications like <a href="https://cp.certmetrics.com/amazon/en/public/verify/credential/b7520fc3b9e64b36bb667efd93dc78b0" target="_blank" rel="noopener noreferrer" class="cert-link"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/amazonwebservices/amazonwebservices-plain-wordmark.svg" alt="AWS" class="cert-icon">AWS Solutions Architect</a>. I build because I genuinely enjoy it.
-          </p>
-        </section>
-
-
-        <!--
-          - service
-        -->
-
-        <section class="service">
-
-          <h3 class="h3 service-title">What I do</h3>
-
-          <ul class="service-list">
-
-            <li class="service-item">
-
-              <div class="service-icon-box">
-                <img src="./assets/images/icon-dev.svg" alt="Full-stack icon" width="40">
-              </div>
-
-              <div class="service-content-box">
-                <h4 class="h4 service-item-title">Full-Stack Development</h4>
-
-                <p class="service-item-text">
-                  React, Spring Boot, Node.js , building end-to-end systems that scale.
-                </p>
-              </div>
-
-            </li>
-
-            <li class="service-item">
-
-              <div class="service-icon-box">
-                <img src="./assets/images/icon-app.svg" alt="AI/ML icon" width="40">
-              </div>
-
-              <div class="service-content-box">
-                <h4 class="h4 service-item-title">AI/ML Engineering</h4>
-
-                <p class="service-item-text">
-                  RAG pipelines, LLM integrations, and intelligent automation systems.
-                </p>
-              </div>
-
-            </li>
-
-            <li class="service-item">
-
-              <div class="service-icon-box">
-                <img src="./assets/images/icon-design.svg" alt="design icon" width="40">
-              </div>
-
-              <div class="service-content-box">
-                <h4 class="h4 service-item-title">System Design</h4>
-
-                <p class="service-item-text">
-                  Distributed systems, API design, and performance optimization.
-                </p>
-              </div>
-
-            </li>
-
-            <li class="service-item">
-
-              <div class="service-icon-box">
-                <img src="./assets/images/freelacing.svg" alt="cloud icon" width="40">
-              </div>
-
-              <div class="service-content-box">
-                <h4 class="h4 service-item-title">Cloud & DevOps</h4>
-
-                <p class="service-item-text">
-                  AWS, Docker, Kubernetes, Terraform , infrastructure that ships fast.
-                </p>
-              </div>
-
-            </li>
-
-          </ul>
-
-        </section>
-
-
-        <!--
-          - testimonials
-        -->
-
-        <section class="testimonials">
-
-          <h3 class="h3 testimonials-title">Kudos 👏</h3>
-
-          <ul class="testimonials-list has-scrollbar">
-
-            <li class="testimonials-item">
-              <div class="content-card" data-testimonials-item>
-
-                <figure class="testimonials-avatar-box">
-                  <img src="./assets/images/avatar-1.png" alt="Daniel lewis" width="60" data-testimonials-avatar>
-                </figure>
-
-                <h4 class="h4 testimonials-item-title" data-testimonials-title>Nitesh Kumar</h4>
-
-                <div class="testimonials-text" data-testimonials-text>
-                  <p>
-                    I had the pleasure of being Mohan's first line manager when he joined our team as a fresher, and I
-                    can confidently say that he made a remarkable impression right from the start. His ability to ask
-                    intelligent questions and quickly grasp new concepts stood out immediately. Mohan was never hesitant
-                    to reach out to anyone, including senior managers, showcasing his inquisitive nature and proactive
-                    approach.
-
-                    One of the most notable projects Mohan worked on was addressing a longstanding technical debt. He
-                    demonstrated exceptional technical prowess by completing this task in a remarkably short period. His
-                    application of the training knowledge was spot-on, and the solution he developed perfectly met the
-                    requirements. Mohan presented the application to senior stakeholders with great confidence, earning
-                    well-deserved appreciation.
-
-                    Beyond his technical skills, Mohan was a true team player. He actively participated in and organized
-                    team events, quickly building rapport with his colleagues. His ability to gel with people and foster
-                    a positive team environment was impressive.
-
-                    Mohan is undoubtedly an asset to any team or company. I highly recommend him for any role, as he
-                    consistently brings dedication, skill, and a collaborative spirit to everything he does.
-                  </p>
-                </div>
-
-              </div>
-            </li>
-
-            <!-- <li class="testimonials-item">
-              <div class="content-card" data-testimonials-item>
-
-                <figure class="testimonials-avatar-box">
-                  <img src="./assets/images/avatar-2.png" alt="Jessica miller" width="60" data-testimonials-avatar>
-                </figure>
-
-                <h4 class="h4 testimonials-item-title" data-testimonials-title>Dipti Sinha</h4>
-
-                <div class="testimonials-text" data-testimonials-text>
-                  <p>
-                    Richard was hired to create a corporate identity. We were very pleased with the work done. She has a
-                    lot of experience
-                    and is very concerned about the needs of client. Lorem ipsum dolor sit amet, ullamcous cididt
-                    consectetur adipiscing
-                    elit, seds do et eiusmod tempor incididunt ut laborels dolore magnarels alia.
-                  </p>
-                </div>
-
-              </div>
-            </li> -->
-
-            <!-- <li class="testimonials-item">
-              <div class="content-card" data-testimonials-item>
-
-                <figure class="testimonials-avatar-box">
-                  <img src="./assets/images/avatar-3.png" alt="Emily evans" width="60" data-testimonials-avatar>
-                </figure>
-
-                <h4 class="h4 testimonials-item-title" data-testimonials-title>Emily evans</h4>
-
-                <div class="testimonials-text" data-testimonials-text>
-                  <p>
-                    Richard was hired to create a corporate identity. We were very pleased with the work done. She has a
-                    lot of experience
-                    and is very concerned about the needs of client. Lorem ipsum dolor sit amet, ullamcous cididt
-                    consectetur adipiscing
-                    elit, seds do et eiusmod tempor incididunt ut laborels dolore magnarels alia.
-                  </p>
-                </div>
-
-              </div>
-            </li>
-
-            <li class="testimonials-item">
-              <div class="content-card" data-testimonials-item>
-
-                <figure class="testimonials-avatar-box">
-                  <img src="./assets/images/avatar-4.png" alt="Henry william" width="60" data-testimonials-avatar>
-                </figure>
-
-                <h4 class="h4 testimonials-item-title" data-testimonials-title>Henry william</h4>
-
-                <div class="testimonials-text" data-testimonials-text>
-                  <p>
-                    Richard was hired to create a corporate identity. We were very pleased with the work done. She has a
-                    lot of experience
-                    and is very concerned about the needs of client. Lorem ipsum dolor sit amet, ullamcous cididt
-                    consectetur adipiscing
-                    elit, seds do et eiusmod tempor incididunt ut laborels dolore magnarels alia.
-                  </p>
-                </div>
-
-              </div>
-            </li> -->
-
-          </ul>
-
-        </section>
-
-
-        <!--
-          - testimonials modal
-        -->
-
-        <div class="modal-container" data-modal-container>
-
-          <div class="overlay" data-overlay></div>
-
-          <section class="testimonials-modal">
-
-            <button class="modal-close-btn" data-modal-close-btn>
-              <ion-icon name="close-outline"></ion-icon>
-            </button>
-
-            <div class="modal-img-wrapper">
-              <figure class="modal-avatar-box">
-                <img src="./assets/images/avatar-1.png" alt="Daniel lewis" width="80" data-modal-img>
-              </figure>
-
-              <img src="./assets/images/icon-quote.svg" alt="quote icon">
-            </div>
-
-            <div class="modal-content">
-
-              <a href="https://www.linkedin.com/in/nitesh2307/" class="h3 modal-title" data-modal-title>Daniel lewis</a>
-
-              <time datetime="2021-06-14">14 June, 2021</time>
-
-              <div data-modal-text>
-                <p>
-                  Richard was hired to create a corporate identity. We were very pleased with the work done. She has a
-                  lot of experience
-                  and is very concerned about the needs of client. Lorem ipsum dolor sit amet, ullamcous cididt
-                  consectetur adipiscing
-                  elit, seds do et eiusmod tempor incididunt ut laborels dolore magnarels alia.
-                </p>
-              </div>
-
-            </div>
-
-          </section>
-
-        </div>
-
-
-        <!--
-          - clients
-        -->
-
-        <section class="clients">
-
-          <h3 class="h3 clients-title">Experience</h3>
-
-          <ul class="clients-list has-scrollbar">
-
-            <li class="clients-item">
-              <a href="#">
-                <img src="./assets/images/servicenow.png" style="padding-right: 20px; filter: invert(1) hue-rotate(180deg);" alt="ServiceNow logo">
-              </a>
-            </li>
-
-            <li class="clients-item">
-              <a href="https://www.natwest.com/">
-                <img src="./assets/images/image.png" style=" max-width: 100px;
-                margin-left: -50px;
-                height: auto;
-                display: block;" alt="client logo">
-              </a>
-            </li>
-
-            <!-- <li class="clients-item">
-              <a href="#">
-                <img src="./assets/images/logo-2-color.png" alt="client logo">
-              </a>
-            </li> -->
-
-            <li class="clients-item">
-              <a href="https://www.linkedin.com/company/vidrona-ltd/?originalSubdomain=uk">
-                <img src="./assets/images/vidrona.png" style=" max-width: 100px;
-                margin-left: -90px;
-                height: auto;
-                display: block;" alt="client logo">
-              </a>
-            </li>
-
-            <!-- <li class="clients-item">
-              <a href="#">
-                <img src="./assets/images/logo-4-color.png" alt="client logo">
-              </a>
-            </li>
-
-            <li class="clients-item">
-              <a href="#">
-                <img src="./assets/images/logo-5-color.png" alt="client logo">
-              </a>
-            </li>
-
-            <li class="clients-item">
-              <a href="#">
-                <img src="./assets/images/logo-6-color.png" alt="client logo">
-              </a>
-            </li> -->
-
-          </ul>
-
-        </section>
-
       </article>
 
-
-
-
-
-      <!--
-        - #RESUME
-      -->
-
-      <article class="resume" data-page="resume">
-
-        <header>
-          <h2 class="h2 article-title">Resume</h2>
-        </header>
-
-        <section class="timeline">
-
-          <div class="title-wrapper">
-            <div class="icon-box">
-              <ion-icon name="book-outline"></ion-icon>
+      <article class="ticket ticket-b" id="educo">
+        <div class="ticket-stub" aria-hidden="true"><span>Admit one</span><b>Winner</b><span>Self-Evolving Agents</span></div>
+        <div class="ticket-body">
+          <div class="ticket-copy">
+            <h3 class="h-section">EduCo, a tutor that learns you</h3>
+            <div>
+              <p><strong>AI shouldn't just teach you, it should learn you.</strong> It writes the lesson, marks your answer, works out what you're weak at, and changes how it teaches on the fly. Winner for Airia and Fastino at the Self-Evolving Agents Hackathon in San Francisco, out of 140 participants.</p>
+              <p class="win-links">
+                <a href="https://devpost.com/software/educo-b4z593" target="_blank" rel="noopener noreferrer">EduCo on Devpost</a>
+              </p>
             </div>
-
-            <h3 class="h3">Education</h3>
           </div>
+          <div class="ticket-photos">
+            <img src="./assets/images/wins/selfevolving1.webp" width="1400" height="1050" alt="Selfie of a smiling group at the Self-Evolving Agents Hackathon" loading="lazy" decoding="async">
+            <img src="./assets/images/wins/selfevolving3.webp" width="1000" height="698" alt="The EduCo interface showing a graded multiple choice lesson" loading="lazy" decoding="async">
+            <img src="./assets/images/wins/selfevolving2.webp" width="1000" height="750" alt="Four people smiling together in a building lobby" loading="lazy" decoding="async">
+            <img src="./assets/images/wins/selfevolving5.webp" width="1000" height="523" alt="Eight people on a video call" loading="lazy" decoding="async">
+          </div>
+        </div>
+      </article>
+    </section>
 
-          <ol class="timeline-list">
+    <section class="honors" id="honors" data-form="orbit" data-side="0.5" data-dim="0.4">
+      <h2 class="h-section" data-rise>Before the hackathons</h2>
+      <dl class="honor-list">
+        <div data-rise>
+          <dt>NatWest Awards</dt>
+          <dd>Living Our Values Award, and NatWest Challenge winner in both FY22 and FY23.</dd>
+        </div>
+        <div data-rise>
+          <dt>Zero Waste Management Club</dt>
+          <dd>Founder and chairperson at VIT Vellore, 2019. 200+ active members working on waste research and projects. <a href="http://linkedin.com/company/zero-waste-management-club/" target="_blank" rel="noopener noreferrer">See the club</a></dd>
+        </div>
+        <div data-rise>
+          <dt>Graduated with distinction</dt>
+          <dd>B.Tech in Electronics and Communication at Vellore Institute of Technology, July 2022, with a 9.25 CGPA.</dd>
+        </div>
+      </dl>
+    </section>
 
-            <li class="timeline-item">
+    <section class="projects" id="projects" data-form="constellation" data-side="0" data-dim="0.62" data-section-form>
+      <h2 class="h-section" data-rise>Things I've built</h2>
+      <p class="section-lede" data-rise>Every cluster in the background is one of my public repositories, and it grows the more recently I pushed to it. Hover over a project to find it.</p>
 
-              <h4 class="h4 timeline-item-title">San Jose State University</h4>
+      <ul class="rows" id="rows">
+        <li data-rise><a class="row" href="https://github.com/Ganeshmohank/orbit" data-repo="orbit" data-hover-form="orbit">
+          <span class="row-name">Orbit</span><span class="row-text">Voice-driven system, first place at CalHacks 12.0</span><span class="row-meta" data-meta></span>
+          <svg class="arrow" viewBox="0 0 16 16" aria-hidden="true"><path d="M4 12l8-8M5 4h7v7"/></svg></a></li>
+        <li data-rise><a class="row" href="https://github.com/Ganeshmohank/Parallel-Kafka-Consumer" data-repo="Parallel-Kafka-Consumer" data-hover-form="lanes">
+          <span class="row-name">Parallel Kafka Consumer</span><span class="row-text">Built-in concurrency management on top of franz-go</span><span class="row-meta" data-meta></span>
+          <svg class="arrow" viewBox="0 0 16 16" aria-hidden="true"><path d="M4 12l8-8M5 4h7v7"/></svg></a></li>
+        <li data-rise><a class="row" href="https://github.com/Ganeshmohank/P2PFile" data-repo="P2PFile" data-hover-form="mesh">
+          <span class="row-name">P2PFile</span><span class="row-text">Decentralized, peer-to-peer content-addressable storage</span><span class="row-meta" data-meta></span>
+          <svg class="arrow" viewBox="0 0 16 16" aria-hidden="true"><path d="M4 12l8-8M5 4h7v7"/></svg></a></li>
+        <li data-rise><a class="row" href="https://github.com/Ganeshmohank/CMPE295B" data-repo="CMPE295B">
+          <span class="row-name">Meeting Intelligence</span><span class="row-text">Meeting ingestion, transcripts and action-item review, on FastAPI and React</span><span class="row-meta" data-meta></span>
+          <svg class="arrow" viewBox="0 0 16 16" aria-hidden="true"><path d="M4 12l8-8M5 4h7v7"/></svg></a></li>
+        <li data-rise><a class="row" href="https://github.com/Ganeshmohank/S3Aws" data-repo="S3Aws">
+          <span class="row-name">S3 Plato</span><span class="row-text">S3 manager</span><span class="row-meta" data-meta></span>
+          <svg class="arrow" viewBox="0 0 16 16" aria-hidden="true"><path d="M4 12l8-8M5 4h7v7"/></svg></a></li>
+        <li data-rise><a class="row" href="https://github.com/Ganeshmohank/DBMSChat" data-repo="DBMSChat">
+          <span class="row-name">StudyX</span><span class="row-text">Study chat bot</span><span class="row-meta" data-meta></span>
+          <svg class="arrow" viewBox="0 0 16 16" aria-hidden="true"><path d="M4 12l8-8M5 4h7v7"/></svg></a></li>
+        <li data-rise><a class="row" href="https://github.com/Ganeshmohank/IChat" data-repo="IChat">
+          <span class="row-name">IChat</span><span class="row-text">Real-time chat and voice platform</span><span class="row-meta" data-meta></span>
+          <svg class="arrow" viewBox="0 0 16 16" aria-hidden="true"><path d="M4 12l8-8M5 4h7v7"/></svg></a></li>
+        <li data-rise><a class="row" href="https://github.com/Ganeshmohank/ChatingSystem" data-repo="ChatingSystem">
+          <span class="row-name">CLI Chat</span><span class="row-text">A chat app for the terminal</span><span class="row-meta" data-meta></span>
+          <svg class="arrow" viewBox="0 0 16 16" aria-hidden="true"><path d="M4 12l8-8M5 4h7v7"/></svg></a></li>
+        <li data-rise><a class="row" href="https://github.com/Ganeshmohank/LoanRepayment-APP" data-repo="LoanRepayment-APP">
+          <span class="row-name">Finance</span><span class="row-text">Visualise and plan EMIs, built for a NatWest hackathon</span><span class="row-meta" data-meta></span>
+          <svg class="arrow" viewBox="0 0 16 16" aria-hidden="true"><path d="M4 12l8-8M5 4h7v7"/></svg></a></li>
+        <li data-rise><a class="row" href="https://github.com/Ganeshmohank/ecommerce" data-repo="ecommerce">
+          <span class="row-name">Prodo</span><span class="row-text">Online platform for perfumes</span><span class="row-meta" data-meta></span>
+          <svg class="arrow" viewBox="0 0 16 16" aria-hidden="true"><path d="M4 12l8-8M5 4h7v7"/></svg></a></li>
+        <li data-rise><a class="row" href="https://github.com/Ganeshmohank/EmployeeManagementSystemWithAngularAndSpringBoot" data-repo="EmployeeManagementSystemWithAngularAndSpringBoot">
+          <span class="row-name">Employee Management</span><span class="row-text">Manage your workforce, with Angular and Spring Boot</span><span class="row-meta" data-meta></span>
+          <svg class="arrow" viewBox="0 0 16 16" aria-hidden="true"><path d="M4 12l8-8M5 4h7v7"/></svg></a></li>
+        <li data-rise><a class="row" href="https://github.com/Ganeshmohank/StockPredection" data-repo="StockPredection">
+          <span class="row-name">Stock Prediction</span><span class="row-text">Stock prediction application</span><span class="row-meta" data-meta></span>
+          <svg class="arrow" viewBox="0 0 16 16" aria-hidden="true"><path d="M4 12l8-8M5 4h7v7"/></svg></a></li>
+        <li data-rise><a class="row" href="https://github.com/Ganeshmohank/HotelMania" data-repo="HotelMania">
+          <span class="row-name">Hotel Mania</span><span class="row-text">Hotel application</span><span class="row-meta" data-meta></span>
+          <svg class="arrow" viewBox="0 0 16 16" aria-hidden="true"><path d="M4 12l8-8M5 4h7v7"/></svg></a></li>
+      </ul>
 
-              <span>2024 , 2026</span>
+      </section>
 
-              <p class="timeline-text">
-                Masters in computer software engineering specilization with distributed systems
-              </p>
+    <section class="design" id="case" data-form="constellation" data-side="0" data-dim="0.26">
+      <h2 class="h-section" data-rise>Case studies and design work</h2>
 
-            </li>
+      <article class="sketch">
+        <div class="sketch-copy">
+          <h3 class="h-sub" data-rise><a href="./casestudy1.html">Flit Taxi</a></h3>
+          <p data-rise>How might we create an all-in-one taxi and delivery app that offers a commission-free model? I took it from research and user interviews to usability testing and a finished interface.</p>
+          <p class="sketch-try" data-rise>Drag across the phone to go from my wireframe to the final screen.</p>
+          <div class="sketch-screens" id="sketch-screens" role="group" aria-label="Choose a screen" data-rise>
+            <button type="button" class="chip" aria-pressed="false" data-wire="./assets/images/casestudy/ts1.png" data-final="./assets/images/casestudy/m1.png">Log in</button>
+            <button type="button" class="chip" aria-pressed="false" data-wire="./assets/images/casestudy/ts3.png" data-final="./assets/images/casestudy/m3.png">Book a ride</button>
+            <button type="button" class="chip" aria-pressed="true" data-wire="./assets/images/casestudy/ts4.png" data-final="./assets/images/casestudy/m4.png">Driver arriving</button>
+            <button type="button" class="chip" aria-pressed="false" data-wire="./assets/images/casestudy/ts5.png" data-final="./assets/images/casestudy/m5.png">On the trip</button>
+            <button type="button" class="chip" aria-pressed="false" data-wire="./assets/images/casestudy/ts6.png" data-final="./assets/images/casestudy/m6.png">Rate the trip</button>
+            <button type="button" class="chip" aria-pressed="false" data-wire="./assets/images/casestudy/ts8.png" data-final="./assets/images/casestudy/m8.png">Profile</button>
+          </div>
+          <a class="button" href="./casestudy1.html" data-rise>Read the case study
+            <svg class="arrow" viewBox="0 0 16 16" aria-hidden="true"><path d="M4 12l8-8M5 4h7v7"/></svg>
+          </a>
+        </div>
+        <div class="sketch-phone" id="sketch-phone" data-tilt style="--split: 82%">
+          <img data-final src="./assets/images/casestudy/m4.png" width="580" height="1186" alt="Final Flit Taxi screen: Driver arriving" loading="lazy">
+          <img data-wire src="./assets/images/casestudy/ts4.png" width="258" height="527" alt="Wireframe of the Flit Taxi screen: Driver arriving" loading="lazy">
+          <span class="sketch-divider" aria-hidden="true"><i></i></span>
+          <label class="visually-hidden" for="sketch-range">Wireframe to final design</label>
+          <input id="sketch-range" class="sketch-range" type="range" min="0" max="100" value="82">
+        </div>
+      </article>
 
-            <li class="timeline-item">
+      <div class="design-pair">
+        <article>
+          <a class="design-img" data-reveal data-tilt href="https://www.figma.com/design/YYYy4e83nstiGOzktwGuR2/My-Designs?node-id=0-1&node-type=canvas&t=67uwKagcswKm7Qen-0" target="_blank" rel="noopener noreferrer"><img src="./assets/images/Intelli Analytics - Line - Tower.png" width="1920" height="990" alt="Intelli Analytics dashboard for powerline and tower assets" loading="lazy" data-parallax></a>
+          <h3 class="h-sub" data-rise>Design VNS</h3>
+          <p data-rise>An energy asset management application that monitors and maintains powerlines and transmission energy.</p>
+        </article>
+        <article>
+          <a class="design-img" data-reveal data-tilt href="https://www.figma.com/design/YYYy4e83nstiGOzktwGuR2/My-Designs?node-id=1-13732&node-type=canvas&t=67uwKagcswKm7Qen-0" target="_blank" rel="noopener noreferrer"><img src="./assets/images/Contact Info.png" width="1512" height="982" alt="Chat application design showing a conversation and contact details" loading="lazy" data-parallax></a>
+          <h3 class="h-sub" data-rise>Chat App</h3>
+          <p data-rise>A design plan for a chat platform.</p>
+        </article>
+      </div>
 
-              <h4 class="h4 timeline-item-title">Vellore Institute of Technology</h4>
+      <p class="design-more" data-rise>
+        More in Figma: <a href="https://www.figma.com/design/gOHXAOMuEJf5gr1ylfDYzX/UI-Screens" target="_blank" rel="noopener noreferrer">design ideas focused on elegant UX and refined user flow</a>, and <a href="https://www.figma.com/design/YYYy4e83nstiGOzktwGuR2/My-Designs?node-id=18-6121&node-type=canvas&t=67uwKagcswKm7Qen-0" target="_blank" rel="noopener noreferrer">YouTube and Apple website clones</a>.
+      </p>
+    </section>
 
-              <span>2018 , 2022</span>
-
-              <p class="timeline-text">
-                Bachelors in Electronics and Communication engineering (9.24/10)
-              </p>
-
-            </li>
-
-            <li class="timeline-item">
-
-              <h4 class="h4 timeline-item-title">Telangana School of secondary education</h4>
-
-              <span>2016 , 2018</span>
-
-              <p class="timeline-text">
-                Mathematics, Physics and Chemistry (982/1000)
-              </p>
-
-            </li>
-
+    <section class="skills" id="resume" data-form="organism" data-side="0.5" data-dim="0.14">
+      <h2 class="h-section" data-rise>Skills and education</h2>
+      <div class="skills-grid">
+        <dl class="skill-list">
+          <div data-rise><dt>Agents and LLMs</dt><dd>MCP tool servers, function calling, multi-agent orchestration, RAG, hybrid retrieval, cross-encoder re-ranking, prompt and context engineering</dd></div>
+          <div data-rise><dt>AI frameworks</dt><dd>LangGraph, LangChain, Semantic Kernel, Anthropic Claude API, OpenAI API, Composio</dd></div>
+          <div data-rise><dt>Security</dt><dd>Machine identity, certificates, granular RBAC, least privilege, JWT, audit logging, static analysis</dd></div>
+          <div data-rise><dt>Languages</dt><dd>Python, Java, Go, JavaScript with Node.js, TypeScript</dd></div>
+          <div data-rise><dt>Back end and APIs</dt><dd>FastAPI, Spring Boot, Express.js, REST and GraphQL design, Kafka, RabbitMQ</dd></div>
+          <div data-rise><dt>Data and retrieval</dt><dd>PostgreSQL, MongoDB, Redis, Pinecone, Chroma</dd></div>
+          <div data-rise><dt>Cloud and DevOps</dt><dd>AWS (ECS, CDK), Docker, Kubernetes, Terraform, GitHub Actions, Jenkins</dd></div>
+          <div data-rise><dt>Front end</dt><dd>React, Angular, Redux, accessibility</dd></div>
+          <div data-rise><dt>Underrated: AR</dt><dd>Marker tracking, location-based AR for the web</dd></div>
+        </dl>
+        <div class="education">
+          <h3 class="h-sub" data-rise>Education</h3>
+          <ol>
+            <li data-rise><strong>San Jose State University</strong><span>MS in Computer Software Engineering, 3.8 GPA. August 2024 to May 2026. Distributed systems, machine learning, deep learning.</span></li>
+            <li data-rise><strong>Vellore Institute of Technology</strong><span>Bachelor's in Electronics and Communication Engineering, 2018 to 2022</span></li>
+            <li data-rise><strong>Telangana School of Secondary Education</strong><span>Mathematics, Physics and Chemistry, 982/1000, 2016 to 2018</span></li>
           </ol>
-
-        </section>
-
-        <section class="timeline">
-
-          <div class="title-wrapper">
-            <div class="icon-box">
-              <ion-icon name="book-outline"></ion-icon>
-            </div>
-
-            <h3 class="h3">Experience</h3>
-          </div>
-
-          <ol class="timeline-list">
-
-            <li class="timeline-item collapsible">
-              <div class="timeline-header" data-collapse-toggle>
-                <div class="timeline-header-content">
-                  <h4 class="h4 timeline-item-title">Software Engineer Intern <span style="color: #056C3E;">@ ServiceNow</span></h4>
-                  <span class="timeline-date">May, 2025 , Current</span>
-                </div>
-                <ion-icon name="chevron-down-outline" class="collapse-icon"></ion-icon>
-              </div>
-              <div class="timeline-content">
-                <p class="timeline-text">
-                  Reduced repeating "how-to" tickets by building RAG Orchestration Agent, using KB retrieval and now APIs,
-                  auto handled reducing 4.6k tickets, deflection hit 31%, at an estimate of cutting 400 hrs / quarter..
-                </p>
-                <p class="timeline-text">
-                  Added validation on every answer (structure + facts) and routed low-risk asks to faster models.
-                  Hallucination rate down by 37%, token spend down 22%, median latency 9.3s to 5.7s..
-                </p>
-                <p class="timeline-text">
-                  Added a context memory layer to retain ticket history and layered in response guards (schema/fact
-                  checks) with dynamic model routing. This drove one-touch resolutions up 54% to 82%, cut handle time by 18%.
-                </p>
-              </div>
-            </li>
-
-            <li class="timeline-item collapsible">
-              <div class="timeline-header" data-collapse-toggle>
-                <div class="timeline-header-content">
-                  <h4 class="h4 timeline-item-title">Software Development Engineer <span style="color: #b16fda;">@ NatWest</span></h4>
-                  <span class="timeline-date">July, 2022 , August, 2024</span>
-                </div>
-                <ion-icon name="chevron-down-outline" class="collapse-icon"></ion-icon>
-              </div>
-              <div class="timeline-content">
-                <p class="timeline-text">
-                  Engineered and optimized the in-house chatbot's client codebase in React, incorporating 5+ features,
-                  including enhanced accessibility, significantly improving UI/UX and boosting user engagement.
-                </p>
-                <p class="timeline-text">
-                  Utilized Redis for caching SQL query results, and implemented RabbitMQ for message queuing. This
-                  efficient distribution of data processing led to a 40% reduction in response times under high loads.
-                </p>
-                <p class="timeline-text">
-                  Spearheaded the engineering of multi-channel chat support solution for 3 banking platforms, boosting
-                  user satisfaction by 40% and reducing manual chat closures by 25% through automated processes.
-                </p>
-                <p class="timeline-text">
-                  Swiftly resolved Redis standby mode during high traffic by implementing rate limiting for API calls
-                  using the leaky bucket algorithm, ensuring CPU consumption remained below 70% and enhancing system stability.
-                </p>
-                <p class="timeline-text">
-                  Developed a React component toolkit with over 30 customizable options, facilitating the product owners
-                  and developers to autonomously create diverse projects, reducing developer involvement and time by 90%.
-                </p>
-                <p class="timeline-text">
-                  Built a scaffolding CLI that automates the generation of 200+ daily test packs summary for the web
-                  services into a daily test results dashboard, saving over 4 hours per day for testing team.
-                </p>
-                <p class="timeline-text">
-                  Streamlined deployment by automating with Terraform, GitLab, leveraging Docker for containerization,
-                  streamlining deployment time by 50%, and ensuring consistent environment setup across all CI/CD stages
-                </p>
-                <p class="timeline-text">
-                  Mentored 3 Software interns on React and documented best practices within the organization.
-                </p>
-              </div>
-            </li>
-
-            <li class="timeline-item collapsible">
-              <div class="timeline-header" data-collapse-toggle>
-                <div class="timeline-header-content">
-                  <h4 class="h4 timeline-item-title">Software Engineer Intern <span style="color: #dfcb33;">@ Vidrona</span></h4>
-                  <span class="timeline-date">September 2021 - March 2022</span>
-                </div>
-                <ion-icon name="chevron-down-outline" class="collapse-icon"></ion-icon>
-              </div>
-              <div class="timeline-content">
-                <p class="timeline-text">
-                  Developed an intuitive dashboard using ReactJS to provide insights for assets system condition and
-                  improved state management efficiency of 30% by integrating Redux and the react-query caching.
-                </p>
-                <p class="timeline-text">
-                  Implemented a real-time alert system using Firebase Cloud Messaging to notify operators of
-                  abnormalities, enhancing response time and operational efficiency by 40%.
-                </p>
-                <p class="timeline-text">
-                  Engineered a secure messaging widget using Socket.io, Node.js, and JWT authentication, facilitating
-                  seamless interaction between field operatives and executives, enhancing communication efficiency by 50%.
-                </p>
-              </div>
-            </li>
-
-            <!-- <li class="timeline-item">
-
-              <h4 class="h4 timeline-item-title">Web designer</h4>
-
-              <span>2010 , 2013</span>
-
-              <p class="timeline-text">
-                Nemo enims ipsam voluptatem, blanditiis praesentium voluptum delenit atque corrupti, quos dolores et
-                quas molestias
-                exceptur.
-              </p>
-
-            </li> -->
-
-          </ol>
-
-        </section>
-
-        <section class="skill">
-
-          <h3 class="h3 skills-title">My skills</h3>
-
-          <div class="skills-grid">
-
-            <div class="skill-category">
-              <h4 class="skill-category-title">Languages</h4>
-              <div class="skill-tags">
-                <span class="skill-tag"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/typescript/typescript-original.svg" alt="TypeScript">TypeScript</span>
-                <span class="skill-tag"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg" alt="JavaScript">JavaScript</span>
-                <span class="skill-tag"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg" alt="Python">Python</span>
-                <span class="skill-tag"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/java/java-original.svg" alt="Java">Java</span>
-                <span class="skill-tag"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nodejs/nodejs-original.svg" alt="Node.js">Node.js</span>
-              </div>
-            </div>
-
-            <div class="skill-category">
-              <h4 class="skill-category-title">Front-End</h4>
-              <div class="skill-tags">
-                <span class="skill-tag"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg" alt="React">React</span>
-                <span class="skill-tag"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/angularjs/angularjs-original.svg" alt="Angular">Angular</span>
-                <span class="skill-tag"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/redux/redux-original.svg" alt="Redux">Redux</span>
-                <span class="skill-tag"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/webpack/webpack-original.svg" alt="Webpack">Webpack</span>
-                <span class="skill-tag"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg" alt="Web APIs">Web APIs</span>
-                <span class="skill-tag">WCAG</span>
-              </div>
-            </div>
-
-            <div class="skill-category">
-              <h4 class="skill-category-title">Back-End & APIs</h4>
-              <div class="skill-tags">
-                <span class="skill-tag"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/spring/spring-original.svg" alt="Spring Boot">Spring Boot</span>
-                <span class="skill-tag">REST APIs</span>
-                <span class="skill-tag"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/graphql/graphql-plain.svg" alt="GraphQL">GraphQL</span>
-                <span class="skill-tag"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/socketio/socketio-original.svg" alt="Socket.io">Socket.io</span>
-                <span class="skill-tag"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/rabbitmq/rabbitmq-original.svg" alt="RabbitMQ">RabbitMQ</span>
-                <span class="skill-tag"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/redis/redis-original.svg" alt="Redis">Redis</span>
-                <span class="skill-tag"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/elasticsearch/elasticsearch-original.svg" alt="Elasticsearch">Elasticsearch</span>
-              </div>
-            </div>
-
-            <div class="skill-category">
-              <h4 class="skill-category-title">AI/ML Stack</h4>
-              <div class="skill-tags">
-                <span class="skill-tag">RAG</span>
-                <span class="skill-tag">LangChain</span>
-                <span class="skill-tag">LLMs</span>
-                <span class="skill-tag">Hugging Face</span>
-                <span class="skill-tag"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/pytorch/pytorch-original.svg" alt="PyTorch">PyTorch</span>
-                <span class="skill-tag"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/tensorflow/tensorflow-original.svg" alt="TensorFlow">TensorFlow</span>
-                <span class="skill-tag"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/keras/keras-original.svg" alt="Keras">Keras</span>
-                <span class="skill-tag"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/pandas/pandas-original.svg" alt="Pandas">Pandas</span>
-                <span class="skill-tag"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/opencv/opencv-original.svg" alt="OpenCV">OpenCV</span>
-              </div>
-            </div>
-
-            <div class="skill-category">
-              <h4 class="skill-category-title">Cloud & DevOps</h4>
-              <div class="skill-tags">
-                <span class="skill-tag"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/amazonwebservices/amazonwebservices-plain-wordmark.svg" alt="AWS">AWS</span>
-                <span class="skill-tag"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/terraform/terraform-original.svg" alt="Terraform">Terraform</span>
-                <span class="skill-tag"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/docker/docker-original.svg" alt="Docker">Docker</span>
-                <span class="skill-tag"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/kubernetes/kubernetes-plain.svg" alt="Kubernetes">Kubernetes</span>
-                <span class="skill-tag"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/gitlab/gitlab-original.svg" alt="GitLab CI/CD">GitLab CI/CD</span>
-                <span class="skill-tag"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/jenkins/jenkins-original.svg" alt="Jenkins">Jenkins</span>
-                <span class="skill-tag"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nginx/nginx-original.svg" alt="Nginx">Nginx</span>
-              </div>
-            </div>
-
-            <div class="skill-category">
-              <h4 class="skill-category-title">Databases & Monitoring</h4>
-              <div class="skill-tags">
-                <span class="skill-tag"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/postgresql/postgresql-original.svg" alt="PostgreSQL">PostgreSQL</span>
-                <span class="skill-tag"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mongodb/mongodb-original.svg" alt="MongoDB">MongoDB</span>
-                <span class="skill-tag"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/redis/redis-original.svg" alt="Redis">Redis</span>
-                <span class="skill-tag"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/grafana/grafana-original.svg" alt="Grafana">Grafana</span>
-                <span class="skill-tag">Nagios</span>
-                <span class="skill-tag">PagerDuty</span>
-              </div>
-            </div>
-
-            <div class="skill-category">
-              <h4 class="skill-category-title">Tools</h4>
-              <div class="skill-tags">
-                <span class="skill-tag"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/git/git-original.svg" alt="Git">Git</span>
-                <span class="skill-tag"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/postman/postman-original.svg" alt="Postman">Postman</span>
-                <span class="skill-tag"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/chrome/chrome-original.svg" alt="DevTools">DevTools</span>
-                <span class="skill-tag"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/figma/figma-original.svg" alt="Figma">Figma</span>
-                <span class="skill-tag"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/vscode/vscode-original.svg" alt="VS Code">VS Code</span>
-                <span class="skill-tag"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/jira/jira-original.svg" alt="Jira">Jira</span>
-                <span class="skill-tag">Agile/Scrum</span>
-              </div>
-            </div>
-
-          </div>
-
-        </section>
-
-      </article>
-
-
-
-
-
-      <!--
-        - #PORTFOLIO
-      -->
-
-      <article class="portfolio" data-page="projects">
-
-        <header>
-          <h2 class="h2 article-title">Projects</h2>
-        </header>
-        <!-- <p class="h4"> Hold tight I am organising the projects :) </p> -->
-
-        <section class="projects">
-
-
-
-          <ul class="filter-list">
-
-            <li class="filter-item">
-              <button class="active" data-filter-btn>All</button>
-            </li>
-
-            <!-- <li class="filter-item">
-              <button data-filter-btn>Web design</button>
-            </li> -->
-
-            <li class="filter-item">
-              <button data-filter-btn>Applications</button>
-            </li>
-
-            <li class="filter-item">
-              <button data-filter-btn>Web development</button>
-            </li>
-
-          </ul>
-
-          <div class="filter-select-box">
-
-            <button class="filter-select" data-select>
-
-              <div class="select-value" data-selecct-value>Select category</div>
-
-              <div class="select-icon">
-                <ion-icon name="chevron-down"></ion-icon>
-              </div>
-
-            </button>
-
-            <ul class="select-list">
-
-              <li class="select-item">
-                <button data-select-item>All</button>
-              </li>
-
-              <!-- <li class="select-item">
-                <button data-select-item>Web design</button>
-              </li> -->
-
-              <li class="select-item">
-                <button data-select-item>Applications</button>
-              </li>
-
-              <li class="select-item">
-                <button data-select-item>Web development</button>
-              </li>
-
-            </ul>
-
-          </div>
-
-          <ul class="project-list">
-
-            <li class="project-item  active" data-filter-item data-category="applications">
-              <a href="https://github.com/Ganeshmohank/Parallel-Kafka-Consumer">
-
-                <figure class="project-img">
-                  <div class="project-item-icon-box">
-                    <ion-icon name="eye-outline"></ion-icon>
-                  </div>
-
-                  <img src="./assets/images/Parallel-Kafka-Consumer.svg" alt="Parallel-Kafka-Consumer" loading="lazy">
-                </figure>
-
-                <h3 class="project-title">Parallel-Kafka-Consumer</h3>
-
-                <p class="project-category">Applications</p>
-
-              </a>
-            </li>
-
-            <li class="project-item  active" data-filter-item data-category="applications">
-              <a href="https://github.com/Ganeshmohank/P2PFile">
-
-                <figure class="project-img">
-                  <div class="project-item-icon-box">
-                    <ion-icon name="eye-outline"></ion-icon>
-                  </div>
-
-                  <img src="./assets/images/p2pfile.svg" alt="P2PFile" loading="lazy">
-                </figure>
-
-                <h3 class="project-title">P2PFile</h3>
-
-                <p class="project-category">Applications</p>
-
-              </a>
-            </li>
-            <li class="project-item  active" data-filter-item data-category="applications">
-              <a href="https://github.com/Ganeshmohank/S3Aws">
-
-                <figure class="project-img">
-                  <div class="project-item-icon-box">
-                    <ion-icon name="eye-outline"></ion-icon>
-                  </div>
-
-                  <img src="./assets/images/awss3.svg" alt="S3 Plato" loading="lazy">
-                </figure>
-
-                <h3 class="project-title">S3 Plato</h3>
-
-                <p class="project-category">S3 manager</p>
-
-              </a>
-            </li>
-            <li class="project-item  active" data-filter-item data-category="applications">
-              <a href="https://github.com/Ganeshmohank/DBMSChat">
-
-                <figure class="project-img">
-                  <div class="project-item-icon-box">
-                    <ion-icon name="eye-outline"></ion-icon>
-                  </div>
-
-                  <img src="./assets/images/dbmschat.svg" alt="metaspark" loading="lazy">
-                </figure>
-
-                <h3 class="project-title">StudyX</h3>
-
-                <p class="project-category">Study Chat bot</p>
-
-              </a>
-            </li>
-            <li class="project-item  active" data-filter-item data-category="applications">
-              <a href="https://github.com/Ganeshmohank/ChatingSystem">
-
-                <figure class="project-img">
-                  <div class="project-item-icon-box">
-                    <ion-icon name="eye-outline"></ion-icon>
-                  </div>
-
-                  <img src="./assets/images/clichatapp.svg" alt="metaspark" loading="lazy">
-                </figure>
-
-                <h3 class="project-title">CLI chatting app</h3>
-
-                <p class="project-category">Applications</p>
-
-              </a>
-            </li>
-            <li class="project-item  active" data-filter-item data-category="web development">
-              <a href="https://github.com/Ganeshmohank/IChat">
-
-                <figure class="project-img">
-                  <div class="project-item-icon-box">
-                    <ion-icon name="eye-outline"></ion-icon>
-                  </div>
-
-                  <img src="./assets/images/project-8.jpg" alt="orizon" loading="lazy">
-                </figure>
-
-                <h3 class="project-title">IChat</h3>
-
-                <p class="project-category"> RT Chat & Voice Platform</p>
-
-              </a>
-            </li>
-
-            <li class="project-item  active" data-filter-item data-category="web development">
-              <a href="https://github.com/Ganeshmohank/LoanRepayment-APP">
-
-                <figure class="project-img">
-                  <div class="project-item-icon-box">
-                    <ion-icon name="eye-outline"></ion-icon>
-                  </div>
-
-                  <img src="./assets/images/project-1.jpg" alt="finance" loading="lazy">
-                </figure>
-
-                <h3 class="project-title">Finance</h3>
-
-                <p class="project-category">Visualise and plan EMIs</p>
-
-              </a>
-            </li>
-
-
-            <li class="project-item  active" data-filter-item data-category="web development">
-              <a href="https://github.com/Ganeshmohank/ecommerce">
-
-                <figure class="project-img">
-                  <div class="project-item-icon-box">
-                    <ion-icon name="eye-outline"></ion-icon>
-                  </div>
-
-                  <img src="./assets/images/project-9.png" alt="fundo" loading="lazy">
-                </figure>
-
-                <h3 class="project-title">Prodo</h3>
-
-                <p class="project-category">Online platform for perfumes</p>
-
-              </a>
-            </li>
-
-            <li class="project-item  active" data-filter-item data-category="applications">
-              <a href="https://github.com/Ganeshmohank/EmployeeManagementSystemWithAngularAndSpringBoot">
-
-                <figure class="project-img">
-                  <div class="project-item-icon-box">
-                    <ion-icon name="eye-outline"></ion-icon>
-                  </div>
-
-                  <img src="./assets/images/employee_management.webp" alt="fundo" loading="lazy">
-                </figure>
-
-                <h3 class="project-title">Employee Management</h3>
-
-                <p class="project-category">Manage your work force</p>
-
-              </a>
-            </li>
-
-
-
-            <li class="project-item  active" data-filter-item data-category="applications">
-              <a href="https://github.com/Ganeshmohank/StockPredection">
-
-                <figure class="project-img">
-                  <div class="project-item-icon-box">
-                    <ion-icon name="eye-outline"></ion-icon>
-                  </div>
-
-                  <img src="./assets/images/project-2.png" alt="StockPredection" loading="lazy">
-                </figure>
-
-                <h3 class="project-title">StockPredection</h3>
-
-                <p class="project-category">Applications</p>
-
-              </a>
-            </li>
-
-
-            <li class="project-item  active" data-filter-item data-category="applications">
-              <a href="https://github.com/Ganeshmohank/HotelMania">
-
-                <figure class="project-img">
-                  <div class="project-item-icon-box">
-                    <ion-icon name="eye-outline"></ion-icon>
-                  </div>
-
-                  <img src="./assets/images/project-3.jpg" alt="Hotel Mania" loading="lazy">
-                </figure>
-
-                <h3 class="project-title">Hotel Mania</h3>
-
-                <p class="project-category">Applications</p>
-
-              </a>
-            </li>
-
-
-            <!-- <li class="project-item  active" data-filter-item data-category="web design">
-              <a href="#">
-
-                <figure class="project-img">
-                  <div class="project-item-icon-box">
-                    <ion-icon name="eye-outline"></ion-icon>
-                  </div>
-
-                  <img src="./assets/images/project-6.png" alt="metaspark" loading="lazy">
-                </figure>
-
-                <h3 class="project-title">MetaSpark</h3>
-
-                <p class="project-category">Web design</p>
-
-              </a>
-            </li> -->
-
-          </ul>
-
-        </section>
-
-      </article>
-
-
-
-
-
-      <!--
-        - #BLOG
-      -->
-
-      <article class="blog" data-page="case">
-
-        <header>
-          <h2 class="h2 article-title">Case Study & Design Ideas</h2>
-        </header>
-
-        <section class="blog-posts">
-
-          <ul class="blog-posts-list">
-
-            <!-- <li class="blog-post-item">
-              <a href="./casestudy1.html">
-
-                <figure class="blog-banner-box">
-                  <img src="./assets/images/blog-1.jpg" alt="Design conferences in 2022" loading="lazy">
-                </figure>
-
-                <div class="blog-content">
-
-                  <div class="blog-meta">
-                    <p class="blog-category">Design</p>
-
-                    <span class="dot"></span>
-
-                    <time datetime="2022-02-23">Fab 23, 2022</time>
-                  </div>
-
-                  <h3 class="h3 blog-item-title">Design conferences in 2022</h3>
-
-                  <p class="blog-text">
-                    Veritatis et quasi architecto beatae vitae dicta sunt, explicabo.
-                  </p>
-
-                </div>
-
-              </a>
-            </li> -->
-
-            <li class="blog-post-item">
-              <a href="https://www.figma.com/design/gOHXAOMuEJf5gr1ylfDYzX/UI-Screens" target="_blank"
-                rel="noopener noreferrer">
-
-                <figure class="blog-banner-box">
-                  <img src="./assets/images/blog-2.jpg" alt="Design Ideas" loading="lazy">
-                </figure>
-
-                <div class="blog-content">
-
-                  <div class="blog-meta">
-                    <p class="blog-category">Design</p>
-
-                    <span class="dot"></span>
-
-                    <time datetime="2025-08-01">Aug 01, 2025</time>
-                  </div>
-
-                  <h3 class="h3 blog-item-title">Design Ideas</h3>
-
-                  <p class="blog-text">
-                    Take a look at my design ideas, focused on elegant UX and refined user flow.
-                  </p>
-
-                </div>
-
-              </a>
-            </li>
-
-            <li class="blog-post-item">
-              <a href="https://www.figma.com/design/YYYy4e83nstiGOzktwGuR2/My-Designs?node-id=0-1&node-type=canvas&t=67uwKagcswKm7Qen-0"
-                target="_blank" rel="noopener noreferrer">
-
-                <figure class="blog-banner-box">
-                  <img src="./assets/images/Intelli Analytics - Line - Tower.png" alt="Vns" loading="lazy">
-                </figure>
-
-                <div class="blog-content">
-
-                  <div class="blog-meta">
-                    <p class="blog-category">Design</p>
-
-                    <span class="dot"></span>
-
-                    <time datetime="2022-02-23">Jan 6, 2021</time>
-                  </div>
-
-                  <h3 class="h3 blog-item-title">Design VNS</h3>
-
-                  <p class="blog-text">
-                    To design an energy asset management application that monitors and maintains powerlines and
-                    transmission energy.
-                  </p>
-
-                </div>
-
-              </a>
-            </li>
-
-            <li class="blog-post-item">
-              <a href="./casestudy1.html" target="_blank" rel="noopener noreferrer">
-
-                <figure class="blog-banner-box">
-                  <img src="./assets/images/blog-4.jpg" alt="Case Study for Taxi" loading="lazy">
-                </figure>
-
-                <div class="blog-content">
-
-                  <div class="blog-meta">
-                    <p class="blog-category">Design</p>
-
-                    <span class="dot"></span>
-
-                    <time datetime="2022-02-23">Feb 23, 2022</time>
-                  </div>
-
-                  <h3 class="h3 blog-item-title">Case Study for Taxis</h3>
-
-                  <p class="blog-text">
-                    How might we create an all-in-one taxi & delivery app that offers a commission-free model
-                  </p>
-
-                </div>
-
-              </a>
-            </li>
-
-            <li class="blog-post-item">
-              <a href="https://www.figma.com/design/YYYy4e83nstiGOzktwGuR2/My-Designs?node-id=18-6121&node-type=canvas&t=67uwKagcswKm7Qen-0"
-                target="_blank" rel="noopener noreferrer">
-
-                <figure class="blog-banner-box">
-                  <img src="./assets/images/blog-5.jpg" alt="The forgotten art of spacing" loading="lazy">
-                </figure>
-
-                <div class="blog-content">
-
-                  <div class="blog-meta">
-                    <p class="blog-category">Design</p>
-
-                    <span class="dot"></span>
-
-                    <time datetime="2022-02-23">Nov 18, 2023</time>
-                  </div>
-
-                  <h3 class="h3 blog-item-title">Clones</h3>
-
-                  <p class="blog-text">
-                    Youtube and Apple websites Clone
-                  </p>
-
-                </div>
-
-              </a>
-            </li>
-
-            <li class="blog-post-item">
-              <a href="https://www.figma.com/design/YYYy4e83nstiGOzktwGuR2/My-Designs?node-id=1-13732&node-type=canvas&t=67uwKagcswKm7Qen-0"
-                target="_blank" rel="noopener noreferrer">
-
-                <figure class="blog-banner-box">
-                  <img src="./assets/images/Contact Info.png" alt="Design digest #79" loading="lazy">
-                </figure>
-
-                <div class="blog-content">
-
-                  <div class="blog-meta">
-                    <p class="blog-category">Design</p>
-
-                    <span class="dot"></span>
-
-                    <time datetime="2022-02-23">Oct 12, 2024</time>
-                  </div>
-
-                  <h3 class="h3 blog-item-title">Chat App</h3>
-
-                  <p class="blog-text">
-                    Design plan for chat platform
-                  </p>
-
-                </div>
-
-              </a>
-            </li>
-
-          </ul>
-
-        </section>
-      </article>
-
-
-
-      <!--
-        - #ACHIEVEMENTS
-      -->
-
-      <article class="achievements" data-page="achievements">
-      
-
-        <header>
-          <h2 class="h2 article-title">Achievements</h2>
-        </header>
-
-        <section class="achievements-list">
-
-          <!-- Achievement 1: EduCo -->
-          <div class="achievement-item">
-            <div class="achievement-header">
-              <h3 class="h3 achievement-title">EduCo - Winner at Self-Evolving Agents Hackathon</h3>
-              <time class="achievement-date">Nov 2025</time>
-            </div>
-            <p class="achievement-award">2 Track Winner</p>
-
-            <div class="achievement-carousel">
-              <div class="carousel-container">
-                <div class="carousel-slide active">
-                  <img src="./assets/images/selfevolving1.jpeg" alt="EduCo Project 1" loading="lazy">
-                </div>
-                <div class="carousel-slide">
-                  <img src="./assets/images/selfevolving5.jpeg" alt="EduCo Project 4" loading="lazy">
-                </div>
-                <div class="carousel-slide">
-                  <img src="./assets/images/selfevolving2.jpeg" alt="EduCo Project 2" loading="lazy">
-                </div>
-                <div class="carousel-slide">
-                  <img src="./assets/images/selfevolving3.jpeg" alt="EduCo Project 3" loading="lazy">
-                </div>
-                <div class="carousel-slide">
-                  <img src="./assets/images/selfevolving4.jpeg" alt="EduCo Project 4" loading="lazy">
-                </div>
-              </div>
-              <div class="carousel-arrow prev" onclick="changeSlide(this, -1)">❮</div>
-              <div class="carousel-arrow next" onclick="changeSlide(this, 1)">❯</div>
-              <div class="carousel-nav">
-                <div class="carousel-dot active" onclick="goToSlide(this, 0)"></div>
-                <div class="carousel-dot" onclick="goToSlide(this, 1)"></div>
-                <div class="carousel-dot" onclick="goToSlide(this, 2)"></div>
-                <div class="carousel-dot" onclick="goToSlide(this, 3)"></div>
-              </div>
-            </div>
-
-            <div class="achievement-content">
-              <ul class="achievement-awards-list">
-                <li>Best Use of Airia - Enterprise AI Simplified</li>
-                <li>Best Use of Fastino - Fastino Labs</li>
-              </ul>
-              <p>
-                <strong>AI shouldn't just teach you - it should learn you.</strong>
-              </p>
-
-              <p>
-                An AI tutor that generates lessons, evaluates answers, understands strengths/weaknesses, and adapts teaching in real-time.
-              </p>
-
-              <a href="https://devpost.com/software/educo-b4z593" target="_blank" rel="noopener noreferrer" class="devpost-link"><ion-icon name="open-outline"></ion-icon> View on Devpost</a>
-            </div>
-          </div>
-
-          <!-- Achievement 2: Orbit -->
-          <div class="achievement-item">
-            <div class="achievement-header">
-              <h3 class="h3 achievement-title">Orbit - 1st Place at CalHacks 12.0</h3>
-              <time class="achievement-date">Oct 2025</time>
-            </div>
-            <p class="achievement-award">3 Track Winner - World's Largest Collegiate Hackathon</p>
-
-            <div class="achievement-carousel">
-              <div class="carousel-container">
-                <div class="carousel-slide active">
-                  <img src="./assets/images/calhacks1.jpeg" alt="Orbit Project 1" loading="lazy">
-                </div>
-                <div class="carousel-slide">
-                  <img src="./assets/images/calhacks2.jpeg" alt="Orbit Project 2" loading="lazy">
-                </div>
-                <div class="carousel-slide">
-                  <img src="./assets/images/calhacks3.jpeg" alt="Orbit Project 3" loading="lazy">
-                </div>
-                <div class="carousel-slide">
-                  <img src="./assets/images/calhacks4.jpeg" alt="Orbit Project 4" loading="lazy">
-                </div>
-                <div class="carousel-slide">
-                  <img src="./assets/images/calhacks5.jpeg" alt="Orbit Project 5" loading="lazy">
-                </div>
-              </div>
-              <div class="carousel-arrow prev" onclick="changeSlide(this, -1)">❮</div>
-              <div class="carousel-arrow next" onclick="changeSlide(this, 1)">❯</div>
-              <div class="carousel-nav">
-                <div class="carousel-dot active" onclick="goToSlide(this, 0)"></div>
-                <div class="carousel-dot" onclick="goToSlide(this, 1)"></div>
-                <div class="carousel-dot" onclick="goToSlide(this, 2)"></div>
-                <div class="carousel-dot" onclick="goToSlide(this, 3)"></div>
-                <div class="carousel-dot" onclick="goToSlide(this, 4)"></div>
-              </div>
-            </div>
-
-            <div class="achievement-content">
-              <p>
-                <strong>Orbit</strong> won 1st Place in 3 tracks at CalHacks 12.0:
-              </p>
-              <ul class="achievement-awards-list">
-                <li>Best Use of Fetch.ai</li>
-                <li>Best Sim.ai (YC X25) workflow</li>
-                <li>Voice-Driven Mobility Automation using omi</li>
-              </ul>
-
-              <p>
-                Competed among 3,300+ hackers and 85 project tracks.
-              </p>
-
-              <p>
-                A voice-driven system that turns conversations into measurable progress. <strong>AI that accelerates what builders do best: build.</strong>
-              </p>
- 
-
-              <a href="https://devpost.com/software/orbit-n97hqz" target="_blank" rel="noopener noreferrer" class="devpost-link"><ion-icon name="open-outline"></ion-icon> View on Devpost</a>
-            </div>
-          </div>
-
-          <!-- Achievement 3: VIT Graduation -->
-          <div class="achievement-item">
-            <div class="achievement-header">
-              <h3 class="h3 achievement-title">Graduated from VIT with Distinction</h3>
-              <time class="achievement-date">Jul 2022</time>
-            </div>
-            <p class="achievement-award"> B.Tech in Electronics & Communication | 9.25 CGPA</p>
-            
-            <div class="achievement-carousel">
-              <div class="carousel-container">
-                <div class="carousel-slide active">
-                  <img src="./assets/images/VIT_Graduate.jpeg" alt="VIT Graduation">
-                </div>
-              </div>
-            </div>
-
-            <div class="achievement-content">
-              <p>
-                Completed my Bachelor's degree at Vellore Institute of Technology with a CGPA of 9.25/10, graduating with distinction.
-              </p>
-            </div>
-          </div>
-
-          <!-- Achievement 4: Zero Waste Management Club -->
-          <div class="achievement-item">
-            <div class="achievement-header">
-              <h3 class="h3 achievement-title">Founder & Chairperson - Zero Waste Management Club</h3>
-              <time class="achievement-date">2019</time>
-            </div>
-            <p class="achievement-award">200+ Active Members | VIT Vellore</p>
-            
-            <div class="achievement-carousel">
-              <div class="carousel-container">
-                <div class="carousel-slide active">
-                  <img src="./assets/images/18BEC0024_Chair person.jpg" alt="Zero Waste Management Club">
-                </div>
-              </div>
-            </div>
-
-            <div class="achievement-content">
-              <p>
-                Founded an initiative to motivate students to work on innovative waste management methods via research and projects. Zero waste is about transforming how we think — from managing waste to managing resources.
-              </p>
-
-              <a href="http://linkedin.com/company/zero-waste-management-club/" target="_blank" rel="noopener noreferrer" class="devpost-link"><ion-icon name="logo-linkedin"></ion-icon> View on LinkedIn</a>
-            </div>
-          </div>
-
-          <!-- Achievement 5: NatWest Awards -->
-          <div class="achievement-item">
-            <div class="achievement-header">
-              <h3 class="h3 achievement-title">NatWest Awards & Recognition</h3>
-              <time class="achievement-date">2022 - 2024</time>
-            </div>
-            <p class="achievement-award">Living Our Values Award | NatWest Challenge Winner FY22 & FY23</p>
-
-            <div class="achievement-content">
-              <p>
-                Recognized for exemplifying NatWest's core values and winning the internal NatWest Challenge competition in consecutive years (FY22 and FY23).
-              </p>
-            </div>
-          </div>
-
-        </section>
-
-      </article>
-
-
-
-      <!--
-        - #CONTACT
-      -->
-      <!--
-      <article class="contact" data-page="contact">
-
-        <header>
-          <h2 class="h2 article-title">Contact</h2>
-        </header>
-
-        <section class="mapbox" data-mapbox>
-          <figure>
-            <iframe
-              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d199666.5651251294!2d-121.58334177520186!3d38.56165006739519!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x809ac672b28397f9%3A0x921f6aaa74197fdb!2sSacramento%2C%20CA%2C%20USA!5e0!3m2!1sen!2sbd!4v1647608789441!5m2!1sen!2sbd"
-              width="400" height="300" loading="lazy"></iframe> -->
-            <!-- <iframe
-              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d6344.545176506403!2d-121.8951596!3d37.3360548!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x808fcca22f6e550b%3A0xa81d52b500622ece!2sCenterra!5e0!3m2!1sen!2sus!4v1724025391969!5m2!1sen!2sus"
-              width="400" height="300" loading="lazy"></iframe>
-          </figure>
-        </section> -->
-
-        <!-- <section class="contact-form">
-
-          <h3 class="h3 form-title">Contact Form</h3>
-
-          <form action="#" class="form" data-form>
-
-            <div class="input-wrapper">
-              <input type="text" name="fullname" class="form-input" placeholder="Full name" required data-form-input>
-
-              <input type="email" name="email" class="form-input" placeholder="Email address" required data-form-input>
-            </div>
-
-            <textarea name="message" class="form-input" placeholder="Your Message" required data-form-input></textarea>
-
-            <button class="form-btn" type="submit" disabled data-form-btn>
-              <ion-icon name="paper-plane"></ion-icon>
-              <span>Send Message</span>
-            </button>
-
-          </form>
-
-        </section> -->
-
-      </article>
-
-      <article class="contact" data-page="Case-Study">
-
-        <header>
-          <h2 class="h2 article-title">Case-Study</h2>
-        </header>
-
-      </article>
-
-    </div>
-
+          <h3 class="h-sub edu-certs" data-rise>Certified</h3>
+          <p data-rise><a href="https://cp.certmetrics.com/amazon/en/public/verify/credential/b7520fc3b9e64b36bb667efd93dc78b0" target="_blank" rel="noopener noreferrer">AWS Solutions Architect, Associate</a>, plus Java and problem-solving certifications.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="kudos" id="kudos" data-form="organism" data-side="0.55" data-dim="0.16">
+      <h2 class="h-section" data-rise>What my managers say</h2>
+      <div class="kudos-grid">
+        <blockquote class="quote" data-rise>
+          <p>He does not wait for step-by-step direction; he takes ownership, asks the right questions, and moves with urgency.</p>
+          <footer><a href="https://www.linkedin.com/in/santosh-poreddy-97b90816/" target="_blank" rel="noopener noreferrer">Santosh Poreddy</a>, Software Engineering Manager at ServiceNow</footer>
+          <span class="quote-sum">In short: learns fast, takes ambiguous problems and drives them to something practical, and goes the extra mile on the AI workflows and retrieval systems he built.</span>
+        </blockquote>
+        <blockquote class="quote" data-rise>
+          <p>Mohan is undoubtedly an asset to any team or company. I highly recommend him for any role, as he consistently brings dedication, skill, and a collaborative spirit to everything he does.</p>
+          <footer><a href="https://www.linkedin.com/in/nitesh2307/" target="_blank" rel="noopener noreferrer">Nitesh Kumar</a>, my first line manager</footer>
+          <span class="quote-sum">In short: asked sharp questions from day one, cleared a longstanding piece of technical debt in record time, and presented it to senior stakeholders with confidence.</span>
+        </blockquote>
+      </div>
+    </section>
   </main>
 
+  <footer class="contact" id="contact">
+    <h2 class="contact-title">Say hi</h2>
+    <a class="contact-mail" href="mailto:mohankancherla2023@gmail.com">mohankancherla2023@gmail.com</a>
+    <div class="contact-foot">
+      <ul>
+        <li><a href="https://www.linkedin.com/in/mohan-kancherla/" target="_blank" rel="noopener noreferrer">LinkedIn</a></li>
+        <li><a href="https://github.com/Ganeshmohank" target="_blank" rel="noopener noreferrer">GitHub</a></li>
+      </ul>
+      <p>San Jose, USA.</p>
+    </div>
+  </footer>
 
-
-
-
-
-  <!--
-    - custom js link
-  -->
-  <script src="./assets/js/script.js"></script>
-
-  <!--
-    - ionicon link
-  -->
-  <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
-  <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
-
+  <script src="./assets/vendor/gsap.min.js"></script>
+  <script src="./assets/vendor/ScrollTrigger.min.js"></script>
+  <script src="./assets/vendor/SplitText.min.js"></script>
+  <script src="./assets/vendor/lenis.min.js"></script>
+  <script type="module" src="./assets/js/main.js"></script>
 </body>
-
 </html>

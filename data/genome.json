@@ -1,0 +1,260 @@
+{
+  "generation": 1,
+  "born": "2026-11-03T06:12:26.770Z",
+  "trigger": {
+    "type": "genesis",
+    "repos": []
+  },
+  "genes": {
+    "hue": 0.273,
+    "spread": 0.82,
+    "lum": 0.42,
+    "flow": 0.143,
+    "speed": 0.333,
+    "curl": 0.072,
+    "grain": 0.245,
+    "trail": 0.427,
+    "width": 0.519,
+    "weight": 0.543
+  },
+  "fitness": {
+    "total": 0.999,
+    "parts": {
+      "legibility": 1,
+      "distinct": 1,
+      "novelty": 1,
+      "continuity": 1,
+      "energy": 0.998,
+      "diversity": 0.991
+    }
+  },
+  "stats": {
+    "repos": 20,
+    "languages": [
+      {
+        "name": "JavaScript",
+        "share": 0.25
+      },
+      {
+        "name": "Python",
+        "share": 0.25
+      },
+      {
+        "name": "C++",
+        "share": 0.1
+      },
+      {
+        "name": "Go",
+        "share": 0.1
+      },
+      {
+        "name": "Java",
+        "share": 0.1
+      },
+      {
+        "name": "TypeScript",
+        "share": 0.1
+      },
+      {
+        "name": "Jupyter Notebook",
+        "share": 0.05
+      },
+      {
+        "name": "PHP",
+        "share": 0.05
+      }
+    ],
+    "active30": 0,
+    "active90": 0,
+    "stars": 2,
+    "lastPush": {
+      "repo": "CMPE295B",
+      "at": "2026-05-10T23:56:58Z"
+    },
+    "activity": 0,
+    "diversity": 0.92
+  },
+  "repos": [
+    {
+      "name": "CMPE295B",
+      "url": "https://github.com/Ganeshmohank/CMPE295B",
+      "description": "The Gallaxy for orbit",
+      "language": "Python",
+      "stars": 0,
+      "pushedAt": "2026-05-10T23:56:58Z"
+    },
+    {
+      "name": "Jira-Software-Process-Auto-Assignment-System",
+      "url": "https://github.com/Ganeshmohank/Jira-Software-Process-Auto-Assignment-System",
+      "description": "This module focuses on scalable and efficient deployment of large language models (LLMs) for real-time transcript understanding and action extraction. Modern serving stacks like vLLM and TGI enable high-throughput, low-latency inference through optimized attention-cache management and intelligent request scheduling.",
+      "language": "Python",
+      "stars": 0,
+      "pushedAt": "2025-10-30T08:45:09Z"
+    },
+    {
+      "name": "orbit",
+      "url": "https://github.com/Ganeshmohank/orbit",
+      "description": "",
+      "language": "Python",
+      "stars": 2,
+      "pushedAt": "2025-10-26T14:06:20Z"
+    },
+    {
+      "name": "Parallel-Kafka-Consumer",
+      "url": "https://github.com/Ganeshmohank/Parallel-Kafka-Consumer",
+      "description": "A custom Kafka consumer with built-in concurrency management, written in Go.   This project is **not** a replacement for Kafka client libraries — instead, it builds on [franz-go](https://github.com/twmb/franz-go) to provide a safer, production-ready consumer experience.  ",
+      "language": "Go",
+      "stars": 0,
+      "pushedAt": "2025-09-10T02:19:08Z"
+    },
+    {
+      "name": "P2PFile",
+      "url": "https://github.com/Ganeshmohank/P2PFile",
+      "description": "P2PFile is a decentralized, peer-to-peer Content Addressable Storage (CAS) system built using Go. It is designed to deliver a reliable, scalable, and efficient way to distribute, store, and retrieve data seamlessly across a network of interconnected nodes.",
+      "language": "Go",
+      "stars": 0,
+      "pushedAt": "2025-08-29T05:49:32Z"
+    },
+    {
+      "name": "StockPredection",
+      "url": "https://github.com/Ganeshmohank/StockPredection",
+      "description": "",
+      "language": "JavaScript",
+      "stars": 0,
+      "pushedAt": "2025-05-19T23:35:14Z"
+    },
+    {
+      "name": "HotelMania",
+      "url": "https://github.com/Ganeshmohank/HotelMania",
+      "description": "",
+      "language": "JavaScript",
+      "stars": 0,
+      "pushedAt": "2025-05-13T21:31:57Z"
+    },
+    {
+      "name": "Automation-Dashboard",
+      "url": "https://github.com/Ganeshmohank/Automation-Dashboard",
+      "description": "",
+      "language": "JavaScript",
+      "stars": 0,
+      "pushedAt": "2025-05-09T06:15:42Z"
+    },
+    {
+      "name": "TextToSpeech",
+      "url": "https://github.com/Ganeshmohank/TextToSpeech",
+      "description": "Extraction of speech to text using groq API and speak back in english, ",
+      "language": "TypeScript",
+      "stars": 0,
+      "pushedAt": "2025-04-23T00:26:52Z"
+    },
+    {
+      "name": "LoanRepayment-APP",
+      "url": "https://github.com/Ganeshmohank/LoanRepayment-APP",
+      "description": "its a loan application developed for hackathon natwest ",
+      "language": "JavaScript",
+      "stars": 0,
+      "pushedAt": "2025-04-23T00:20:20Z"
+    },
+    {
+      "name": "StockPull",
+      "url": "https://github.com/Ganeshmohank/StockPull",
+      "description": "",
+      "language": "Python",
+      "stars": 0,
+      "pushedAt": "2025-04-22T07:06:53Z"
+    },
+    {
+      "name": "S3Aws",
+      "url": "https://github.com/Ganeshmohank/S3Aws",
+      "description": "",
+      "language": "TypeScript",
+      "stars": 0,
+      "pushedAt": "2024-12-31T01:31:52Z"
+    },
+    {
+      "name": "DBMSChat",
+      "url": "https://github.com/Ganeshmohank/DBMSChat",
+      "description": "",
+      "language": "Python",
+      "stars": 0,
+      "pushedAt": "2024-12-09T06:55:07Z"
+    },
+    {
+      "name": "IChat",
+      "url": "https://github.com/Ganeshmohank/IChat",
+      "description": "",
+      "language": "JavaScript",
+      "stars": 0,
+      "pushedAt": "2024-10-24T19:03:25Z"
+    },
+    {
+      "name": "OSWorks",
+      "url": "https://github.com/Ganeshmohank/OSWorks",
+      "description": "",
+      "language": "C++",
+      "stars": 0,
+      "pushedAt": "2024-09-24T01:47:26Z"
+    },
+    {
+      "name": "ChatingSystem",
+      "url": "https://github.com/Ganeshmohank/ChatingSystem",
+      "description": "ChatAPP",
+      "language": "C++",
+      "stars": 0,
+      "pushedAt": "2023-11-18T09:49:52Z"
+    },
+    {
+      "name": "ecommerce",
+      "url": "https://github.com/Ganeshmohank/ecommerce",
+      "description": "",
+      "language": "Java",
+      "stars": 0,
+      "pushedAt": "2023-10-08T08:04:53Z"
+    },
+    {
+      "name": "EmployeeManagementSystemWithAngularAndSpringBoot",
+      "url": "https://github.com/Ganeshmohank/EmployeeManagementSystemWithAngularAndSpringBoot",
+      "description": "",
+      "language": "Java",
+      "stars": 0,
+      "pushedAt": "2023-05-31T02:24:28Z"
+    },
+    {
+      "name": "ecommerce-website",
+      "url": "https://github.com/Ganeshmohank/ecommerce-website",
+      "description": "",
+      "language": "PHP",
+      "stars": 0,
+      "pushedAt": "2021-02-18T12:19:35Z"
+    },
+    {
+      "name": "loan-prediction",
+      "url": "https://github.com/Ganeshmohank/loan-prediction",
+      "description": "",
+      "language": "Jupyter Notebook",
+      "stars": 0,
+      "pushedAt": "2021-02-18T12:10:31Z"
+    }
+  ],
+  "fingerprint": "Automation-Dashboard:2025-05-09T06:15:42Z:0|CMPE295B:2026-05-10T23:56:58Z:0|ChatingSystem:2023-11-18T09:49:52Z:0|DBMSChat:2024-12-09T06:55:07Z:0|EmployeeManagementSystemWithAngularAndSpringBoot:2023-05-31T02:24:28Z:0|HotelMania:2025-05-13T21:31:57Z:0|IChat:2024-10-24T19:03:25Z:0|Jira-Software-Process-Auto-Assignment-System:2025-10-30T08:45:09Z:0|LoanRepayment-APP:2025-04-23T00:20:20Z:0|OSWorks:2024-09-24T01:47:26Z:0|P2PFile:2025-08-29T05:49:32Z:0|Parallel-Kafka-Consumer:2025-09-10T02:19:08Z:0|S3Aws:2024-12-31T01:31:52Z:0|StockPredection:2025-05-19T23:35:14Z:0|StockPull:2025-04-22T07:06:53Z:0|TextToSpeech:2025-04-23T00:26:52Z:0|ecommerce-website:2021-02-18T12:19:35Z:0|ecommerce:2023-10-08T08:04:53Z:0|loan-prediction:2021-02-18T12:10:31Z:0|orbit:2025-10-26T14:06:20Z:2",
+  "lineage": [
+    {
+      "generation": 1,
+      "born": "2026-11-03T06:12:26.770Z",
+      "genes": {
+        "hue": 0.273,
+        "spread": 0.82,
+        "lum": 0.42,
+        "flow": 0.143,
+        "speed": 0.333,
+        "curl": 0.072,
+        "grain": 0.245,
+        "trail": 0.427,
+        "width": 0.519,
+        "weight": 0.543
+      },
+      "trigger": "genesis",
+      "fitness": 0.999
+    }
+  ]
+}

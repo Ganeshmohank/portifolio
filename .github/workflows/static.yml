@@ -1,29 +1,59 @@
-# Simple workflow for deploying static content to GitHub Pages
-name: Deploy static content to Pages
+# Deploys the site to GitHub Pages, and once a day lets it evolve.
+name: Evolve and deploy
 
 on:
-  # Runs on pushes targeting the default branch
   push:
     branches: ["master"]
-
-  # Allows you to run this workflow manually from the Actions tab
+  schedule:
+    - cron: "17 9 * * *"
   workflow_dispatch:
 
-# Sets permissions of the GITHUB_TOKEN to allow deployment to GitHub Pages
 permissions:
-  contents: read
+  contents: write
   pages: write
   id-token: write
 
-# Allow only one concurrent deployment, skipping runs queued between the run in-progress and latest queued.
-# However, do NOT cancel in-progress runs as we want to allow these production deployments to complete.
 concurrency:
   group: "pages"
   cancel-in-progress: false
 
 jobs:
-  # Single deploy job since we're just deploying
+  evolve:
+    if: github.event_name != 'push'
+    runs-on: ubuntu-latest
+    outputs:
+      changed: ${{ steps.evolve.outputs.changed }}
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: 22
+      - name: Test the genetics
+        run: node --test scripts/evolve.test.mjs scripts/rag.test.mjs
+      - name: Breed the next generation
+        id: evolve
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: node scripts/evolve.mjs
+      - name: Commit the new genome
+        if: steps.evolve.outputs.changed == 'true'
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add data/genome.json
+          git commit -m "evolve: generation $(node -p "require('./data/genome.json').generation")"
+          git pull --rebase origin master
+          git push origin HEAD:master
+
   deploy:
+    needs: evolve
+    # Pushes skip the evolve job, so this has to run even when it was skipped.
+    if: >-
+      ${{ !cancelled() && !failure() && (
+        github.event_name != 'schedule' || needs.evolve.outputs.changed == 'true'
+      ) }}
     environment:
       name: github-pages
       url: ${{ steps.deployment.outputs.page_url }}
@@ -31,13 +61,15 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v4
+        with:
+          # The evolve job may have just pushed, so take the latest master.
+          ref: master
       - name: Setup Pages
         uses: actions/configure-pages@v5
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
-          # Upload entire repository
-          path: '.'
+          path: "."
       - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v4
