@@ -2,6 +2,8 @@ import { GENESIS, layerColors, phenotype } from './genetics.js';
 import { createField } from './field.js';
 import { initAsk } from './ask-ui.js';
 import { initCyber } from './cyber.js';
+import { initVault } from './vault.js';
+import { initVidrona } from './vidrona.js';
 import { TOPICS } from './rag.js';
 
 const reduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
@@ -108,11 +110,44 @@ function fittedStretch(line, width) {
 }
 
 /** Big display lines fill the page by changing width, not size. */
+function heroSlot() {
+  const name = document.querySelector('.name');
+  return window.innerWidth >= 900 && window.innerHeight < window.innerWidth ? Math.min(name.clientWidth * 0.24, 400) : 0;
+}
+
+/**
+ * Where the crystal sits on wide screens, in viewport pixels. It rides in the slot beside the
+ * first name until the whole name has scrolled away, so it never crosses it, then glides down
+ * into the open space beside the About copy.
+ */
+function heroAnchor() {
+  const reserve = heroSlot();
+  if (!reserve) return null;
+  const nameEl = document.querySelector('.name');
+  const name = nameEl.getBoundingClientRect();
+  const first = nameEl.querySelector('[data-line]').getBoundingClientRect();
+  // Small enough that its rings stay inside the first line and clear of the second.
+  const r = Math.min(reserve * 0.22, first.height * 0.3);
+  const start = { x: name.right - reserve / 2, y: first.top + first.height / 2, r };
+  const vw = window.innerWidth;
+  const vh = window.innerHeight;
+  const end = { x: vw * 0.7, y: vh * 0.42, r: Math.min(vh * 0.2, r * 1.25) };
+  // 0 while any of the name is on screen, 1 once the visitor has scrolled most of a screen past it.
+  const gone = Math.max(0, -name.bottom);
+  const t0 = Math.min(1, gone / (vh * 0.7));
+  const t = t0 * t0 * (3 - 2 * t0);
+  // Kept just above the top edge while it waits, so it enters from there.
+  const startY = Math.max(start.y, -r * 2.2);
+  return { x: start.x + (end.x - start.x) * t, y: startY + (end.y - startY) * t, r: start.r + (end.r - start.r) * t };
+}
+
 function fitDisplayType() {
   const name = document.querySelector('.name');
-  for (const line of name.querySelectorAll('[data-line]')) {
-    line.style.fontStretch = `${fittedStretch(line, name.clientWidth).toFixed(1)}%`;
-  }
+  // On wide screens the first name leaves a slot on its right for the Root CA crystal.
+  const reserve = heroSlot();
+  name.querySelectorAll('[data-line]').forEach((line, i) => {
+    line.style.fontStretch = `${fittedStretch(line, name.clientWidth - (i === 0 ? reserve : 0)).toFixed(1)}%`;
+  });
   const title = document.querySelector('.contact-title');
   title.style.fontStretch = `${fittedStretch(title, title.clientWidth).toFixed(1)}%`;
 }
@@ -167,7 +202,12 @@ function serviceScene(section, stage) {
     },
     onToggle(self) {
       if (self.isActive) show(indexAt(self.progress));
-      else stage.setPose({ active: -1 });
+      else {
+        // Leaving the scene: the stack folds back up, so the line has nothing to point at.
+        stage.setPose({ active: -1 });
+        line.style.opacity = 0;
+        scene.active = -2;
+      }
     },
   });
   return scene;
@@ -185,13 +225,17 @@ function initScenes(stage, field) {
     onUpdate(self) { stage.setPose({ hero: self.progress }); },
   });
 
+  // The crystal rides beside the first name, so it scrolls with it rather than over it.
+  gsap.ticker.add(() => stage.setHeroAnchor?.(heroAnchor()));
+
   const cyberPin = initCyber({ stage, viewHeight: () => stableHeight });
   const service = serviceScene(document.getElementById('servicenow'), stage);
 
   // Keeps the leader line tied to the moving layer.
   gsap.ticker.add(() => {
     const i = service.active;
-    if (i < 0 || stageCanvas.style.visibility !== 'visible') return;
+    if (i < 0) return;
+    if (stageCanvas.style.visibility !== 'visible') { service.line.style.opacity = 0; return; }
     const anchor = stage.layerAnchor(i);
     const copy = service.panels[i]?.querySelector('p');
     if (!anchor || !copy) return;
@@ -316,7 +360,12 @@ function initMotion(field, stage, onSectionChange) {
     const scene = target.matches('main, .is-scene, .zoom');
     const heading = scene ? target : (target.querySelector('h2, h3') || target);
     const offset = scene ? 0 : -96;
-    if (lenis) lenis.scrollTo(heading, { offset, duration: 0.85, easing: (t) => 1 - (1 - t) ** 4 });
+    // A pinned scene's own position moves while it's pinned, so measuring it can land at the
+    // scene's end. Go to where its pin starts instead, which is the start of the scene.
+    const pin = ScrollTrigger.getAll().find((t) => t.pin === target);
+    const dest = pin ? pin.start : heading;
+    if (lenis) lenis.scrollTo(dest, { offset: pin ? 0 : offset, duration: 0.85, easing: (t) => 1 - (1 - t) ** 4 });
+    else if (pin) window.scrollTo(0, pin.start);
     else heading.scrollIntoView();
     target.setAttribute('tabindex', '-1');
     target.focus({ preventScroll: true });
@@ -350,6 +399,8 @@ function initMotion(field, stage, onSectionChange) {
   // Pinned scenes are created first and in page order, because each one's
   // scroll length moves everything below it.
   if (stage) initScenes(stage, field);
+  initVault({ reduced });
+  initVidrona({ reduced });
   if (!reduced) {
     // Tickets are native sticky, so the browser's compositor moves them, in both directions.
     // Script only eases the covered one back a touch, which is a transform and stays cheap.

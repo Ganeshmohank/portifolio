@@ -399,9 +399,15 @@ export function createStage(canvas, { small = false } = {}) {
       const halfH = Math.tan((camera.fov * Math.PI) / 360) * camera.position.z;
       const halfW = halfH * camera.aspect;
       const screen = canvas.getBoundingClientRect();
-      const heroX = portrait ? 0 : lerp(0, state.side * 2.75, toSide);
-      const heroY = portrait ? lerp(1.5, 1.45, toSide) : lerp(0.22, 0.28, toSide);
-      const heroS = portrait ? lerp(0.62, 0.56, toSide) : lerp(1.02, 0.9, toSide);
+      // On wide screens main.js steers it: beside the first name, then down beside the About copy.
+      const a = state.heroAnchor;
+      const startX = a ? (a.x / (screen.width || 1)) * 2 * halfW - halfW : 0;
+      const startY = a ? halfH - (a.y / (screen.height || 1)) * 2 * halfH : 0.22;
+      const startS = a ? (a.r / (screen.height || 1)) * 2 * halfH : 1.02;
+      // With an anchor the whole path is already worked out in pixels, so it's used as given.
+      const heroX = portrait ? 0 : a ? startX : lerp(0, state.side * 2.75, toSide);
+      const heroY = portrait ? lerp(1.5, 1.45, toSide) : a ? startY : lerp(0.22, 0.28, toSide);
+      const heroS = portrait ? lerp(0.62, 0.56, toSide) : a ? startS : lerp(1.02, 0.9, toSide);
       const pinX = (state.rootX / (screen.width || 1)) * 2 * halfW - halfW;
       const pinY = halfH - (state.rootY / (screen.height || 1)) * 2 * halfH;
       const pinS = (state.rootR / (screen.height || 1)) * 2 * halfH;
@@ -489,10 +495,9 @@ export function createStage(canvas, { small = false } = {}) {
       query.material.color.copy(accent2);
     },
     setRootPose({ x, y, r, o, label }) {
-      if (state.rootPinT < 0.5 && state.rootPin < 0.01) {
-        // First frame in the scene: no glide from a stale position.
-        state.rootX = x; state.rootY = y; state.rootR = r;
-      }
+      // Position and size follow the scene exactly. Easing them made the crystal trail the
+      // scrolling world, so it sat below the route it was meant to start.
+      state.rootX = x; state.rootY = y; state.rootR = r;
       state.rootXT = x; state.rootYT = y; state.rootRT = r; state.rootOT = o; state.rootLabelT = label;
     },
     setPose({ hero, explode, blend, stackIn, rootPin, active, side }) {
@@ -505,6 +510,8 @@ export function createStage(canvas, { small = false } = {}) {
       if (active !== undefined) state.active = active;
       if (side !== undefined) state.side = side;
     },
+    /** Where the crystal sits in the hero, in viewport pixels. Null centres it. */
+    setHeroAnchor(anchor) { state.heroAnchor = anchor; },
     setMode(mode) { state.mode = mode; },
     pointer(x, y) { state.tx = x; state.ty = y; },
     /** Screen position of a layer's right edge, for the leader line. */

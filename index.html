@@ -82,13 +82,14 @@
           <h2 class="h-giant">Cybersecurity</h2>
           <h3 class="h-job">Palo Alto Networks</h3>
           <p class="job-role">Staff Software Engineer, Machine Identity Management. CyberArk R&amp;D, Santa Clara. June 2026 to present.</p>
-          <p class="job-lede">I work on machine identity, end to end, from schema and backend APIs to the customer-facing UI.</p>
+          <p class="job-lede">I work on machine identity management.</p>
         </div>
         <ol class="cyber-steps">
-          <li><h3 class="h-job">Signed by the root</h3><p>Machine identity is what I work on. Every service proves who it is with a certificate that chains back to a trusted root.</p></li>
-          <li><h3 class="h-job">Encrypted in transit</h3><p>With an identity it can prove, one service can talk to another over mutual TLS. Anyone watching the wire sees noise.</p></li>
           <li><h3 class="h-job">Access groups</h3><p>I replaced all-or-nothing RBAC with granular access groups. Least privilege is now a shared layer that services enforce by default.</p></li>
           <li><h3 class="h-job">Audit trail</h3><p>I moved the platform's audit trail onto Palo Alto's central logging after the acquisition, one environment at a time, behind feature flags.</p></li>
+          <li><h3 class="h-job">Notifications</h3><p>I work on notifications for certificate events.</p></li>
+          <li><h3 class="h-job">VSat</h3><p>I work on VSat, a satellite that discovers certificates on-prem.</p></li>
+          <li><h3 class="h-job">Private CA</h3><p>I work on Private CA, certificates issued from your own root.</p></li>
         </ol>
       </div>
       <div class="cyber-stage" id="cyber-stage" aria-hidden="true"></div>
@@ -113,7 +114,7 @@
       <svg class="leader" aria-hidden="true"><line x1="0" y1="0" x2="0" y2="0"/></svg>
     </section>
 
-    <section class="work natwest" data-form="vault" data-side="0.56" data-dim="0.95">
+    <section class="work natwest has-art" data-form="dust" data-side="0.56" data-dim="0.3">
       <article class="job" id="natwest">
         <h3 class="h-job" data-rise>NatWest</h3>
         <p class="job-lede" data-rise>Banks don't get quiet hours. Two years on the chat behind 3 banking platforms, summed up the way a bank would.</p>
@@ -136,18 +137,65 @@
           <footer class="statement-foot"><span>Closing balance</span><strong>Living Our Values Award. NatWest Challenge winner, FY22 and FY23.</strong></footer>
         </div>
       </article>
+      <div class="vault" aria-hidden="true">
+        <svg viewBox="-120 0 520 470">
+          <rect class="v-foot" x="52" y="380" width="44" height="22"/><rect class="v-foot" x="304" y="380" width="44" height="22"/>
+          <rect class="v-body" x="20" y="20" width="360" height="360" rx="10"/>
+          <circle class="v-hole" cx="200" cy="200" r="142"/>
+          <g class="v-inside">
+            <path class="v-shelf" d="M78 280H322"/>
+            <path class="v-bar" d="M88 280L95 250H125L132 280Z"/>
+            <path class="v-bar" d="M138 280L145 250H175L182 280Z"/>
+            <path class="v-bar" d="M188 280L195 250H225L232 280Z"/>
+            <path class="v-bar" d="M238 280L245 250H275L282 280Z"/>
+            <path class="v-bar" d="M113 244L120 214H150L157 244Z"/>
+            <path class="v-bar" d="M163 244L170 214H200L207 244Z"/>
+            <path class="v-bar" d="M213 244L220 214H250L257 244Z"/>
+            <path class="v-bar" d="M138 208L145 178H175L182 208Z"/>
+            <path class="v-bar" d="M188 208L195 178H225L232 208Z"/>
+          </g>
+          <rect class="v-hinge" x="46" y="128" width="20" height="36"/><rect class="v-hinge" x="46" y="236" width="20" height="36"/>
+          <circle class="v-lamp" cx="146" cy="440" r="9"/>
+          <text class="v-state v-open" x="166" y="447">OPEN</text>
+          <text class="v-state v-locked" x="166" y="447">LOCKED</text>
+        </svg>
+        <div class="v-door" aria-hidden="true">
+          <div class="v-slab"></div>
+          <div class="v-back"><svg viewBox="64 64 272 272"><circle class="v-back-plate" cx="200" cy="200" r="136"/><circle class="v-back-ring" cx="200" cy="200" r="100"/><path class="v-back-bar" d="M110 200H290M200 110V290M136 136L264 264M264 136L136 264"/><circle class="v-back-hub" cx="200" cy="200" r="30"/></svg></div>
+          <svg class="v-front" viewBox="64 64 272 272">
+            <circle class="v-face" cx="200" cy="200" r="136"/>
+            <circle class="v-ring" cx="200" cy="200" r="112"/>
+            <g class="v-bolts">
+              <g transform="rotate(0 200 200)"><rect class="v-bolt" x="300" y="191" width="30" height="18"/></g>
+              <g transform="rotate(45 200 200)"><rect class="v-bolt" x="300" y="191" width="30" height="18"/></g>
+              <g transform="rotate(90 200 200)"><rect class="v-bolt" x="300" y="191" width="30" height="18"/></g>
+              <g transform="rotate(135 200 200)"><rect class="v-bolt" x="300" y="191" width="30" height="18"/></g>
+              <g transform="rotate(180 200 200)"><rect class="v-bolt" x="300" y="191" width="30" height="18"/></g>
+              <g transform="rotate(225 200 200)"><rect class="v-bolt" x="300" y="191" width="30" height="18"/></g>
+              <g transform="rotate(270 200 200)"><rect class="v-bolt" x="300" y="191" width="30" height="18"/></g>
+              <g transform="rotate(315 200 200)"><rect class="v-bolt" x="300" y="191" width="30" height="18"/></g>
+            </g>
+            <g class="v-wheel">
+              <path d="M200 200V130M200 200L139 235M200 200L261 235"/>
+              <circle cx="200" cy="130" r="11"/><circle cx="139" cy="235" r="11"/><circle cx="261" cy="235" r="11"/>
+              <circle class="v-hub" cx="200" cy="200" r="24"/>
+            </g>
+          </svg>
+        </div>
+      </div>
     </section>
 
-    <section class="work" data-form="mesh" data-side="0.56" data-dim="0.95">
+    <section class="work vidrona has-art" data-form="dust" data-side="0.56" data-dim="0.3">
       <article class="job" id="vidrona">
         <h3 class="h-job" data-rise>Vidrona</h3>
         <p class="job-role" data-rise>Software Engineer Intern, remote from the UK team. September 2021 to March 2022.</p>
-        <p class="job-lede" data-rise>Where it started: getting people in the field and people in the office looking at the same picture, and talking on the same line.</p>
+        <p class="job-lede" data-rise>Where it started: tower management, for towers, poles and the other assets out in the field. I helped field and office teams look at the same picture, and talk on the same line.</p>
         <ul class="results">
           <li data-rise><b data-count>30%</b><span>better state management on a ReactJS asset dashboard, using Redux and react-query</span></li>
           <li data-rise><b data-count>50%</b><span>better communication, through a secure messaging widget with Socket.io, Node.js and JWT</span></li>
         </ul>
       </article>
+      <div class="grid-art" aria-hidden="true"></div>
     </section>
 
     <section class="ask" id="ask" data-ask>
@@ -391,12 +439,10 @@
         <blockquote class="quote" data-rise>
           <p>He does not wait for step-by-step direction; he takes ownership, asks the right questions, and moves with urgency.</p>
           <footer><a href="https://www.linkedin.com/in/santosh-poreddy-97b90816/" target="_blank" rel="noopener noreferrer">Santosh Poreddy</a>, Software Engineering Manager at ServiceNow</footer>
-          <span class="quote-sum">In short: learns fast, takes ambiguous problems and drives them to something practical, and goes the extra mile on the AI workflows and retrieval systems he built.</span>
         </blockquote>
         <blockquote class="quote" data-rise>
           <p>Mohan is undoubtedly an asset to any team or company. I highly recommend him for any role, as he consistently brings dedication, skill, and a collaborative spirit to everything he does.</p>
           <footer><a href="https://www.linkedin.com/in/nitesh2307/" target="_blank" rel="noopener noreferrer">Nitesh Kumar</a>, my first line manager</footer>
-          <span class="quote-sum">In short: asked sharp questions from day one, cleared a longstanding piece of technical debt in record time, and presented it to senior stakeholders with confidence.</span>
         </blockquote>
       </div>
     </section>
@@ -412,6 +458,7 @@
       </ul>
       <p>San Jose, USA.</p>
     </div>
+    <p class="built-with"><a href="https://claude.ai" target="_blank" rel="noopener noreferrer"><svg class="claude-mark" viewBox="0 0 24 24" aria-hidden="true"><path d="M12.00 9.80L12.00 1.00M13.32 10.24L17.12 5.21M13.91 10.90L21.09 6.75M14.18 12.27L20.93 13.10M13.91 13.10L21.96 17.75M12.86 14.03L15.13 19.36M12.00 14.20L12.00 22.50M10.68 13.76L6.28 19.59M10.09 13.10L2.47 17.50M9.82 11.73L3.56 10.96M10.09 10.90L3.34 7.00M11.14 9.97L8.48 3.72"/></svg>Built with Claude</a></p>
   </footer>
 
   <script src="./assets/vendor/gsap.min.js"></script>

@@ -533,6 +533,12 @@ p { margin: 0; }
 
 .contact-foot ul { display: flex; flex-wrap: wrap; gap: 0.5rem 1.5rem; list-style: none; margin: 0; padding: 0; }
 
+/* A small credit, centred under everything else. The mark takes the footer's ink colour. */
+.built-with { margin: clamp(2.5rem, 5vw, 4rem) 0 0; text-align: center; font-weight: 600; }
+.built-with a { display: inline-flex; align-items: center; gap: 0.5rem; text-decoration: none; }
+@media (hover: hover) { .built-with a:hover { text-decoration: underline; text-decoration-thickness: 2px; } }
+.claude-mark { width: 1.35em; height: 1.35em; fill: none; stroke: currentColor; stroke-width: 2.3; stroke-linecap: round; }
+
 /* Narrow screens get their own composition. */
 
 @media (max-width: 1000px) {
@@ -1119,56 +1125,41 @@ main { overflow-x: clip; }
   z-index: 2;
 }
 
-/* The certificate: a printed thing, not a glowing card */
-.cert {
-  width: 560px;
-  height: 400px;
-  padding: 34px 40px;
-  background: #efeee8;
-  color: #17171a;
-  box-shadow: 0 24px 60px rgb(0 0 0 / 0.5);
-}
-.cert::before {
-  content: "";
-  position: absolute;
-  inset: 12px;
-  border: 2px solid #17171a;
-  outline: 1px solid #17171a;
-  outline-offset: 3px;
-  pointer-events: none;
-}
-.cert-top { display: flex; justify-content: space-between; align-items: baseline; margin-bottom: 20px; }
-.cert-top strong { font-family: "Anybody", sans-serif; font-weight: 820; font-stretch: 96%; font-size: 36px; }
-.cert-top span { font-size: 17px; color: #55555c; }
-.cert-row { display: grid; grid-template-columns: 120px 1fr; font-size: 19px; line-height: 1.75; }
-.cert-row span { color: #55555c; }
-.cert-row b { font-weight: 700; }
-.cert-sig { position: absolute; left: 40px; bottom: 34px; width: 330px; font-size: 13px; line-height: 1.3; }
-.cert-sig span { display: block; color: #55555c; font-size: 15px; }
-.cert-sig code { font-family: Consolas, Menlo, "Courier New", monospace; font-size: 14px; word-break: break-all; }
-.seal { position: absolute; right: 40px; bottom: 34px; width: 112px; height: 112px; fill: none; stroke: #b3261e; stroke-width: 4; }
-.seal path { stroke-width: 9; stroke-linecap: round; stroke-linejoin: round; }
+/* Notifications: printed cards, newest on top */
+.alerts { width: 560px; display: grid; gap: 14px; }
+.alert { display: grid; grid-template-columns: 14px 1fr auto; gap: 18px; align-items: center; padding: 18px 22px; background: #efeee8; color: #17171a; box-shadow: 0 18px 40px rgb(0 0 0 / 0.4); }
+.alert > i { width: 14px; height: 14px; border-radius: 50%; background: #2e7d32; }
+.alert.warn > i { background: #c99a00; }
+.alert.bad > i { background: #b3261e; }
+.alert b { display: block; font-family: "Anybody", sans-serif; font-size: 22px; font-weight: 800; font-stretch: 92%; }
+.alert span { font-size: 16px; color: #55555c; }
+.alert em { font-style: normal; font-size: 15px; color: #55555c; }
 
-/* The wire */
-.node { width: 240px; padding: 22px 24px; background: #efeee8; color: #17171a; }
-.node b { display: block; font-family: "Anybody", sans-serif; font-size: 25px; font-weight: 800; font-stretch: 90%; }
-.node span { font-size: 15px; color: #55555c; }
-.packet {
-  position: absolute;
-  left: 0;
-  top: 278px;
-  width: 300px;
-  padding: 18px 12px;
-  background: var(--ink);
-  color: #101012;
-  font-family: Consolas, Menlo, "Courier New", monospace;
-  font-size: 18px;
-  font-weight: 700;
-  text-align: center;
-  white-space: pre;
-  overflow: hidden;
-}
-.packet.is-cipher { background: var(--accent); }
+/* VSat: a satellite sweeping for services */
+.vsat { width: 640px; height: 520px; }
+.vsat-sky { position: absolute; inset: 0; width: 640px; height: 520px; overflow: visible; }
+.orbit { fill: none; stroke: var(--ink-soft); stroke-width: 1.5; stroke-dasharray: 4 8; opacity: 0.6; }
+.beam { fill: var(--accent); fill-opacity: 0.14; }
+.sat rect { fill: var(--step); stroke: var(--ink); stroke-width: 2; }
+.sat .sat-body { fill: var(--accent); stroke: none; }
+.sat path { stroke: var(--ink); stroke-width: 2; }
+.vs-chip { position: absolute; width: 190px; height: 52px; display: flex; align-items: center; gap: 12px; padding: 0 16px; background: var(--step); color: var(--ink-soft); font-size: 18px; font-weight: 700; transition: background 180ms ease, color 180ms ease; }
+.vs-chip i { width: 12px; height: 12px; border: 2px solid currentColor; border-radius: 50%; }
+.vs-chip.found { background: #efeee8; color: #17171a; }
+.vs-chip.found i { background: var(--accent); border-color: var(--accent); }
+.vsat-count { position: absolute; left: 14px; top: 466px; margin: 0; font-size: 17px; font-weight: 700; color: var(--ink-soft); }
+
+/* Private CA: a root, its issuing CAs, and the certificates they issue */
+.pca { width: 640px; height: 420px; }
+.pca-lines { position: absolute; inset: 0; width: 640px; height: 500px; fill: none; stroke: var(--accent); stroke-width: 2; }
+.ca { position: absolute; display: grid; place-items: center; height: 70px; background: #efeee8; color: #17171a; }
+.ca b { font-family: "Anybody", sans-serif; font-size: 22px; font-weight: 800; font-stretch: 92%; }
+.ca-root { width: 260px; background: var(--accent); color: var(--on-accent); }
+.ca-mid { width: 220px; height: 58px; }
+.ca-mid b { font-size: 19px; }
+.ca-leaf { position: absolute; width: 130px; padding: 12px 14px; background: #efeee8; color: #17171a; border-top: 4px solid var(--accent); }
+.ca-leaf span { display: block; font-size: 13px; color: #55555c; }
+.ca-leaf b { font-size: 17px; }
 
 /* The access matrix */
 .matrix { width: 620px; display: grid; gap: 10px; }
@@ -1224,7 +1215,6 @@ main { overflow-x: clip; }
 .route-track { stroke: rgb(255 255 255 / 0.13); stroke-width: 2; }
 .route-live { stroke: var(--accent); stroke-width: 3; }
 .token { width: 18px; height: 18px; border-radius: 50%; left: 0; top: 0; background: var(--ink); box-shadow: 0 0 0 5px var(--accent); }
-.packet { left: 0; top: 0; }
 .cy-note { width: 560px; }
 .cy-note h3 {
   margin: 0;
@@ -1236,7 +1226,6 @@ main { overflow-x: clip; }
   color: var(--accent);
 }
 .cy-note p { margin: 12px 0 0; font-size: 21px; line-height: 1.4; }
-.node { z-index: 1; }
 @media (max-width: 899px) {
   .cy-world .cyber-head { width: 600px; transform: none; }
   .cy-world .cyber-head .h-giant { font-size: 84px; }
@@ -1250,8 +1239,59 @@ main { overflow-x: clip; }
 
 /* The route passes behind the words, never through them. */
 .cy-note { z-index: 1; padding: 8px 10px 12px 0; background: var(--ground); }
-@media (max-width: 899px) {
-  .packet { width: 470px; font-size: 26px; z-index: 2; }
-}
 
 @media (max-width: 899px) { .cy-tag { display: none; } }
+
+/* NatWest: a vault door, drawn in vectors, that locks as you scroll past. */
+.has-art { display: grid; grid-template-columns: minmax(0, 44rem) minmax(0, 1fr); gap: clamp(2rem, 5vw, 5rem); align-items: start; }
+.has-art .job { min-height: 0; padding-bottom: 2rem; }
+/* Sits beside the statement, its base level with the paper's foot. */
+.vault { align-self: end; justify-self: center; width: min(100%, 24rem); margin-bottom: 2rem; }
+.vault { position: relative; perspective: 1100px; }
+.vault > svg { display: block; width: 100%; height: auto; overflow: visible; }
+/* The door is a real slab in 3D: it hangs on its left edge, over the opening in the body. */
+.v-door { position: absolute; left: 35.385%; top: 13.617%; width: 52.308%; aspect-ratio: 1; transform-style: preserve-3d; transform-origin: 0 50%; }
+.v-door svg { position: absolute; inset: 0; width: 100%; height: 100%; overflow: visible; }
+.v-slab, .v-slab i { position: absolute; inset: 0; transform-style: preserve-3d; }
+.v-slab i { border-radius: 50%; }
+.v-front { backface-visibility: hidden; }
+.v-back { position: absolute; inset: 0; backface-visibility: hidden; }
+.v-back-plate { fill: #8e8d86; stroke: #17171a; stroke-width: 3; }
+.v-back-ring { fill: none; stroke: #6c6b65; stroke-width: 6; }
+.v-back-bar { stroke: #4d4c47; stroke-width: 12; stroke-linecap: round; }
+.v-back-hub { fill: #4d4c47; stroke: #17171a; stroke-width: 3; }
+.v-body { fill: var(--step); stroke: var(--ink); stroke-width: 3; }
+.v-foot { fill: var(--ink-soft); }
+.v-hole { fill: #050504; stroke: var(--ink-soft); stroke-width: 2; }
+.v-hinge { fill: var(--ink-soft); }
+.v-shelf { stroke: var(--ink-soft); stroke-width: 3; }
+.v-bar { fill: var(--accent); stroke: #8a7400; stroke-width: 2; stroke-linejoin: round; }
+.v-face { fill: #efeee8; stroke: #17171a; stroke-width: 3; }
+.v-ring { fill: none; stroke: #17171a; stroke-width: 2; stroke-dasharray: 3 7; }
+.v-bolt { fill: var(--accent); stroke: #17171a; stroke-width: 2; }
+.v-wheel path { stroke: #17171a; stroke-width: 9; stroke-linecap: round; fill: none; }
+.v-wheel circle { fill: #17171a; }
+.v-wheel .v-hub { fill: var(--accent); stroke: #17171a; stroke-width: 4; }
+.v-lamp { fill: #2e7d32; }
+.v-state { font-family: "Anybody", sans-serif; font-size: 22px; font-weight: 800; letter-spacing: 0.08em; fill: var(--ink); }
+.v-locked { opacity: 0; }
+.vault.is-static .v-open { opacity: 0; }
+.vault.is-static .v-locked { opacity: 1; }
+.vault.is-static .v-lamp { fill: var(--accent); }
+@media (max-width: 900px) {
+  .has-art { grid-template-columns: minmax(0, 1fr); }
+  .vault { position: relative; top: auto; order: -1; width: min(70%, 18rem); margin: 0 0 1rem; justify-self: start; }
+}
+
+/* Vidrona: transmission towers and the power lines strung between them. */
+.grid-art { align-self: center; justify-self: center; width: min(100%, 34rem); }
+.grid-art svg { display: block; width: 100%; height: auto; overflow: visible; }
+.g-ground { stroke: var(--ink-soft); stroke-width: 1.5; stroke-dasharray: 2 6; }
+.g-tower { fill: none; stroke: var(--ink); stroke-width: 1.6; stroke-linejoin: round; }
+.g-line { fill: none; stroke: var(--accent); stroke-width: 1.4; }
+.g-tag circle, .g-state circle { fill: var(--accent); }
+.g-tag text, .g-state text { font-family: "Anybody", sans-serif; font-size: 13px; font-weight: 800; letter-spacing: 0.06em; fill: var(--ink); }
+.g-state text { font-family: inherit; font-size: 14px; font-weight: 700; letter-spacing: 0; fill: var(--ink-soft); }
+@media (max-width: 900px) {
+  .grid-art { order: -1; justify-self: start; width: 100%; margin-bottom: 1rem; }
+}

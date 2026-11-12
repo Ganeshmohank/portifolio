@@ -24,7 +24,7 @@ export const CORPUS = [
   { title: 'NatWest DevOps', href: '#natwest', text: 'He automated infrastructure with Terraform and deployed on AWS ECS, cutting deployment time by 50%.' },
   { title: 'NatWest awards', href: '#honors', text: 'At NatWest he received the Living Our Values Award and won the NatWest Challenge in both FY22 and FY23.' },
 
-  { title: 'Vidrona', href: '#vidrona', text: 'Mohan was a Software Engineer Intern at Vidrona from September 2021 to March 2022. He built a ReactJS dashboard with Redux and react-query, and a secure messaging widget using Socket.io, Node.js and JWT.' },
+  { title: 'Vidrona', href: '#vidrona', text: 'Mohan was a Software Engineer Intern at Vidrona from September 2021 to March 2022, on tower management for towers, poles and other field assets. He built a ReactJS dashboard with Redux and react-query, and a secure messaging widget using Socket.io, Node.js and JWT.' },
 
   { title: 'Orbit at CalHacks', href: '#achievements', text: 'Orbit won for 3 sponsors at CalHacks 12.0 in 2025, out of 2178+ participants: Fetch.ai, Sim.ai and omi. Orbit is a multi-agent system using LangChain and 4 Composio MCP servers that turns Zoom transcripts into actionable tasks through voice commands on Omi hardware.' },
   { title: 'EduCo', href: '#educo', text: 'EduCo won for 2 sponsors at the Self-Evolving Agents Hackathon in San Francisco in November 2025, out of 140 participants: Airia and Fastino. It is an AI tutor that generates lessons, evaluates answers, understands strengths and weaknesses, and adapts its teaching in real time.' },
