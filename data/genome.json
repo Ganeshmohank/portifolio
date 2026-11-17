@@ -1,21 +1,21 @@
 {
-  "generation": 2,
-  "born": "2026-11-10T17:04:28.480Z",
+  "generation": 3,
+  "born": "2026-11-17T18:36:05.203Z",
   "trigger": {
     "type": "drift",
     "repos": []
   },
   "genes": {
-    "hue": 0.244,
-    "spread": 0.835,
-    "lum": 0.356,
-    "flow": 0.183,
-    "speed": 0.377,
-    "curl": 0.045,
-    "grain": 0.841,
-    "trail": 0.745,
-    "width": 0.153,
-    "weight": 0.685
+    "hue": 0.126,
+    "spread": 0.855,
+    "lum": 0.68,
+    "flow": 0.132,
+    "speed": 0.39,
+    "curl": 0,
+    "grain": 0.549,
+    "trail": 1,
+    "width": 0,
+    "weight": 0.163
   },
   "fitness": {
     "total": 0.998,
@@ -24,8 +24,8 @@
       "distinct": 1,
       "novelty": 1,
       "continuity": 1,
-      "energy": 0.989,
-      "diversity": 0.995
+      "energy": 0.995,
+      "diversity": 0.985
     }
   },
   "stats": {
@@ -270,6 +270,24 @@
         "trail": 0.745,
         "width": 0.153,
         "weight": 0.685
+      },
+      "trigger": "drift",
+      "fitness": 0.998
+    },
+    {
+      "generation": 3,
+      "born": "2026-11-17T18:36:05.203Z",
+      "genes": {
+        "hue": 0.126,
+        "spread": 0.855,
+        "lum": 0.68,
+        "flow": 0.132,
+        "speed": 0.39,
+        "curl": 0,
+        "grain": 0.549,
+        "trail": 1,
+        "width": 0,
+        "weight": 0.163
       },
       "trigger": "drift",
       "fitness": 0.998
